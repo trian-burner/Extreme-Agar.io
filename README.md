@@ -1,2 +1,2 @@
 # Extreme-Agar.io
-  this is Agar.io, but LAN, and better
+  this is Agar.io, but LAN, and better, in every way
