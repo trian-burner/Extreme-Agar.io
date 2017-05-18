@@ -1,0 +1,14 @@
+import greenfoot.*;
+
+public class agar  extends ScrollWorld{
+    public agar(){
+        //Creating a world size of 700x500 cells with 1x1 pixels
+        super(700, 500, 1, 4000, 4000);
+        
+        addCameraFollower(new Cell(), 0, 0);
+    }
+    
+    public void spawnPlayer(){
+        addObject(new Cell(), 0, 0);
+    }
+}

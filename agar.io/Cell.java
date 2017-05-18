@@ -8,8 +8,20 @@ import greenfoot.*;
  */
 public class Cell extends ScrollActor
 {
+    int speed = 6;
+    int size = 1;
     public void act(){
-        move(4);
+        MouseInfo m = Greenfoot.getMouseInfo();
+        
+        if (m != null) {
+            turnTowards(m.getX(), m.getY());
+            getWorld().setCameraDirection(getRotation());
+            getWorld().moveCamera(speed);
+        }
+        GreenfootImage cellSkin = getImage();
+        cellSkin.scale(cellSkin.getWidth() + size, cellSkin.getHeight() + size);
+        setImage(cellSkin);
+
     }
     
     /*
@@ -31,4 +43,6 @@ public class Cell extends ScrollActor
         return output;
     }
     */
+   
+   
 }

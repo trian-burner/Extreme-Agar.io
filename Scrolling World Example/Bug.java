@@ -11,7 +11,7 @@ import greenfoot.*;
 public class Bug extends ScrollActor
 {
     /** The number of cells we move forward and backword */
-    private static final int MOVE_AMOUNT = 5;
+    private static final int MOVE_AMOUNT = 10;
     
     /**
      * Move to face the mouse,
