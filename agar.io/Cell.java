@@ -1,5 +1,5 @@
 import greenfoot.*;
-
+//import java.util.*;
 /**
  * Write a description of class Cell here.
  * 
@@ -8,8 +8,8 @@ import greenfoot.*;
  */
 public class Cell extends ScrollActor
 {
-    int speed = 3;
-    int proteinMass = 100;
+    int speed = 6;
+    int proteinMass = 10;
     int mass = 50;
     public void act(){
         MouseInfo m = Greenfoot.getMouseInfo();
@@ -32,6 +32,8 @@ public class Cell extends ScrollActor
         setImage(cellSkin);
         mass += 10;
     }
+    
+    
     
     /*
     public void removeMass(){
