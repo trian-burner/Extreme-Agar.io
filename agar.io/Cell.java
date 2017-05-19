@@ -8,8 +8,9 @@ import greenfoot.*;
  */
 public class Cell extends ScrollActor
 {
-    int speed = 6;
-    int size = 1;
+    int speed = 3;
+    int proteinMass = 100;
+    int mass = 50;
     public void act(){
         MouseInfo m = Greenfoot.getMouseInfo();
         
@@ -18,16 +19,21 @@ public class Cell extends ScrollActor
             getWorld().setCameraDirection(getRotation());
             getWorld().moveCamera(speed);
         }
+        
+        if (isTouching(protein.class)) {
+            removeTouching(protein.class);
+            addMass();
+        }
+    }
+    
+    public void addMass(){
         GreenfootImage cellSkin = getImage();
-        cellSkin.scale(cellSkin.getWidth() + size, cellSkin.getHeight() + size);
+        cellSkin.scale(cellSkin.getWidth() + proteinMass, cellSkin.getHeight() + proteinMass);
         setImage(cellSkin);
-
+        mass += 10;
     }
     
     /*
-    public void addMass(){
-    }
-    
     public void removeMass(){
     }
     
