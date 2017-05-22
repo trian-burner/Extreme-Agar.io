@@ -1,5 +1,5 @@
 import greenfoot.*;
-//import java.util.*;
+import java.awt.Color;
 /**
  * Write a description of class Cell here.
  * 
@@ -11,9 +11,15 @@ public class Cell extends ScrollActor
     int speed = 6;
     int proteinMass = 10;
     int mass = 50;
+    int size = 35;
     public void act(){
         MouseInfo m = Greenfoot.getMouseInfo();
         
+        GreenfootImage cell = new GreenfootImage(size, size);
+        cell.setColor(Color.RED);
+        cell.fillOval(0, 0, size, size);
+        setImage(cell);
+
         if (m != null) {
             turnTowards(m.getX(), m.getY());
             getWorld().setCameraDirection(getRotation());
@@ -27,9 +33,7 @@ public class Cell extends ScrollActor
     }
     
     public void addMass(){
-        GreenfootImage cellSkin = getImage();
-        cellSkin.scale(cellSkin.getWidth() + proteinMass, cellSkin.getHeight() + proteinMass);
-        setImage(cellSkin);
+        size += 5;
         mass += 10;
     }
     
