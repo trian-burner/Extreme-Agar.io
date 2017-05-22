@@ -8,7 +8,7 @@ import java.awt.Color;
  */
 public class Cell extends ScrollActor
 {
-    int speed = 6;
+    int speed = 10;
     int proteinMass = 10;
     int mass = 50;
     int size = 35;
@@ -33,7 +33,7 @@ public class Cell extends ScrollActor
     }
     
     public void addMass(){
-        size += 5;
+        size += 2;
         mass += 10;
     }
     

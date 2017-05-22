@@ -18,4 +18,17 @@ public class protein extends ScrollActor
         cell = getOneIntersectingObject(Cell.class);
      
     }
+    
+    public protein(int color) {
+        super();
+        switch(color) {
+            case 1:
+                setImage("blueProtein.png");
+                break;
+            case 2: 
+                setImage("redProtein.png");
+                break;
+                
+            }
+    }
 }

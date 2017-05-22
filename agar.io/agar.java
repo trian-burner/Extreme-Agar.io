@@ -3,11 +3,13 @@ import greenfoot.*;
 public class agar  extends ScrollWorld{
     public agar(){
         //Creating a world size of 700x500 cells with 1x1 pixels
-        super(700, 500, 1, 4000, 4000);
+        super(900, 600, 1, 4900, 4600);
         
         addCameraFollower(new Cell(), 0, 0);
         
         spawnProteins();
+        
+        
     }
     
     public void spawnPlayer(){
@@ -17,9 +19,9 @@ public class agar  extends ScrollWorld{
     public void spawnProteins() {
         //World world = getWorld();
         for (int i = 0; i < 500; i++) {
-            int x = (int)(Math.random() * getFullWidth());
-            int y = (int)(Math.random() * getFullHeight());
-            addObject(new protein(), x, y);
+            int x = (int)(Math.random() * (getFullWidth() - getWidth()) + (getWidth() / 2));
+            int y = (int)(Math.random() * (getFullHeight() - getHeight()) + (getHeight() / 2));
+            addObject(new protein((int)(Math.random() * 2)), x, y);
         }
     }
 }
