@@ -16,15 +16,14 @@ public class ScoreBoard extends Actor
     private static final String prefix = "Scores: ";
     //String players = agar.players();
     
-    /*public double getScore(){
+    public double getScore(){
         return Cell.getMass();
     }
-   
     public void act() 
     {
         //Add your action code here.
         updateImage(Cell.getMass());
-    }  */   
+    }    
     public void updateImage(int massText){
         setImage(new GreenfootImage(prefix + " " + Integer.toString(massText), 18, Color.black, new Color(0, 0, 0, 0)));
     }

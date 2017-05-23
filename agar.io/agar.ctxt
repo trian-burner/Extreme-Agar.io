@@ -7,6 +7,4 @@ comment2.params=
 comment2.target=void\ spawnPlayer()
 comment3.params=
 comment3.target=void\ spawnProteins()
-comment4.params=
-comment4.target=void\ spawnViruses()
-numComments=5
+numComments=4
