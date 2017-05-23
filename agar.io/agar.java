@@ -31,7 +31,7 @@ public class agar  extends ScrollWorld{
         for (int i = 0; i < 1000; i++) {
             int x = (int)(Math.random() * (getFullWidth() - getWidth()) + (getWidth() / 2));
             int y = (int)(Math.random() * (getFullHeight() - getHeight()) + (getHeight() / 2));
-            addObject(new protein((int)(Math.random() * 2)), x, y);
+            addObject(new protein((int)(Math.random() * 3)), x, y);
         }
     }
     

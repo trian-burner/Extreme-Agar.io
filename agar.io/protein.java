@@ -23,10 +23,10 @@ public class protein extends ScrollActor
         super();
         switch(color) {
             case 1:
-                setImage("blueProtein.png");
+                setImage("blueProtein.bmp");
                 break;
             case 2: 
-                setImage("redProtein.png");
+                setImage("redProtein.bmp");
                 break;
                 
             }
