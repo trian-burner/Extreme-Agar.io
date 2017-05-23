@@ -9,18 +9,19 @@ import java.awt.Color;
  */
 public class Counter extends Actor
 {
-    int score = 0;
+    private int totalCount = 0;
+
+    public Counter()
+    {
+        setImage(new GreenfootImage("0", 20, Color.WHITE, Color.BLACK));
+    }
+    
     /**
-     * Act - do whatever the Counter wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Increase the total amount displayed on the counter, by a given amount.
      */
-    public void act() 
+    public void bumpCount(int amount)
     {
-        setImage(new GreenfootImage("Mass: " + score, 24, Color.black, Color.lightGray));
-    }    
-     
-    public void addScore()
-    {
-        score++;
+        totalCount += amount;
+        setImage(new GreenfootImage("" + totalCount, 20, Color.WHITE, Color.BLACK));
     }
 }

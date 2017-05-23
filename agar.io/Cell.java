@@ -8,7 +8,7 @@ import java.awt.Color;
  */
 public class Cell extends ScrollActor
 {
-    int speed = 10;
+    int speed = 7;
     int proteinMass = 10;
     int mass = 50;
     int size = 35;
@@ -38,12 +38,25 @@ public class Cell extends ScrollActor
         //Counter counter = agar.getCounter();    //Getting cell mass counter
         //counter.addScore();
         
+       agar gameWorld = (agar) getWorld();  // get a reference to the world
+       Counter counter = gameWorld.getCounter();  // get a reference to the counter
+       counter.bumpCount(5);
+        
+        
         //Decrementing speed as mass increments
         if(mass+1 % 25 == 0){
             speed--;
         }
     }
-    
+   
+    /*
+    private void hitAnAsteroid()
+    {
+       agar gameWorld = (agar) getWorld();  // get a reference to the world
+       Counter counter = gameWorld.getCounter();  // get a reference to the counter
+       counter.bumpCount(5);
+    }
+    */
     
     
     /*
