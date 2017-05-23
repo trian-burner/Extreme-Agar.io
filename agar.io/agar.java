@@ -13,7 +13,7 @@ public class agar  extends ScrollWorld{
         addObject(theCounter, 25, 50);
         
         spawnProteins();
-        
+        spawnViruses();
         
     }
     
@@ -34,6 +34,12 @@ public class agar  extends ScrollWorld{
             addObject(new protein((int)(Math.random() * 2)), x, y);
         }
     }
-    
+    public void spawnViruses(){
+        for(int i = 0; i < 50; i++){
+            int x = (int)(Math.random() * (getFullWidth() - getWidth()) + (getWidth() / 2));
+            int y = (int)(Math.random() * (getFullHeight() - getHeight()) + (getHeight() / 2));
+            addObject(new virus(), x, y);
+        }
+    }
 
 }
