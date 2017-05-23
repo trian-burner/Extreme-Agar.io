@@ -33,8 +33,15 @@ public class Cell extends ScrollActor
     }
     
     public void addMass(){
-        size += 2;
-        mass += 10;
+        size += 1;
+        mass += 1;
+        //Counter counter = agar.getCounter();    //Getting cell mass counter
+        //counter.addScore();
+        
+        //Decrementing speed as mass increments
+        if(mass+1 % 25 == 0){
+            speed--;
+        }
     }
     
     
