@@ -14,11 +14,10 @@ public class ScoreBoard extends Actor {
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private static final String prefix = "Scores: ";
-<<<<<<< HEAD
     //String players = agar.players();
-    agar agarWorld = (agar)getWorld();
-    List<Cell> playersList = agarWorld.getObjects(Cell.class);
-    public Cell players(){
+    //agar agarWorld = (agar)getWorld();
+    //List<Cell> playersList = agarWorld.getObjects(Cell.class);
+    /*public Cell players(){
         //agar agarWorld = (agar)getWorld();
         //List<Cell> playersList = agarWorld.getObjects(Cell.class);
         Cell player = null;
@@ -32,21 +31,15 @@ public class ScoreBoard extends Actor {
         }
         
         return player;
-    }
-=======
+    }*/
     //String players = agar.players();    
->>>>>>> 64e03f7135bc8d9bc2bd888aba5f07b75544d23d
 
     public void act() 
     {
         //updateImage(players().getMass());
         
     }    
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 64e03f7135bc8d9bc2bd888aba5f07b75544d23d
     public void updateImage(int massText){
         setImage(new GreenfootImage(prefix + " " + Integer.toString(massText), 18, Color.black, new Color(0, 0, 0, 0)));
     }
