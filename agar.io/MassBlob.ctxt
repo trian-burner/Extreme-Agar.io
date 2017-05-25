@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.params=color\ rotation\ cellX\ cellY
-comment0.target=Mass(java.awt.Color,\ int,\ int,\ int)
+comment0.target=MassBlob(java.awt.Color,\ int,\ int,\ int)
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Mas\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=2
+comment2.params=
+comment2.target=boolean\ shotStatus()
+numComments=3

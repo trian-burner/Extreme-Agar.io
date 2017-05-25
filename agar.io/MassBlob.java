@@ -7,15 +7,17 @@ import java.awt.Color;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Mass extends ScrollActor
+public class MassBlob extends ScrollActor
 {
     Color color;
     int rotation;
     int cellX;
     int cellY;
     boolean release = false;
+    boolean shot;
     
-    public Mass(Color color, int rotation, int cellX, int cellY) {
+    
+    public MassBlob(Color color, int rotation, int cellX, int cellY) {
         this.color = color;
         this.cellX = cellX;
         this.cellY = cellY;
@@ -46,7 +48,16 @@ public class Mass extends ScrollActor
         MouseInfo m = Greenfoot.getMouseInfo();
         int distance = (int)Math.pow((Math.pow((cellX - getGlobalX()), 2) + Math.pow((cellY - getGlobalY()), 2)), .5);
         
-        boolean shot = false;
+        //Actor cell = getTouching(Cell.class);
+        
+        shot = false;
+        
+        if(shot == true && isTouching(Cell.class) == true){
+            System.out.print("YAY");
+            getWorld().removeObject(this);
+        }
+        
+
         if (m != null && shot == false) {           
             if (distance <= 25) {
                 move(25);
@@ -72,4 +83,8 @@ public class Mass extends ScrollActor
             }
         }
     }    
+    
+    public boolean shotStatus(){
+        return shot;
+    }
 }

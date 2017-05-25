@@ -72,11 +72,24 @@ public class Cell extends ScrollActor {
             getWorld().moveCamera(speed);
         }
         
-        //Protein Colition Detection
+        //Protein Collision Detection
         if (isTouching(Protein.class)) {
             removeTouching(Protein.class);
             addMass(1);
         }
+        
+        
+        
+        //MassBlob Collision Detection
+        if(isTouching(MassBlob.class)){
+            
+            
+            removeTouching(MassBlob.class);
+            addMass(10);
+            
+      
+        }
+        
         
         //Virus Collision Detection
         if(isTouching(Virus.class) && (getMass() > 40)){
@@ -93,7 +106,7 @@ public class Cell extends ScrollActor {
         if(Greenfoot.isKeyDown("w")) {
             if (mass > 20) {
                 if (keyCounter > 5) {
-                    ((Agar)getWorld()).addObject(new Mass(cell.getColor(), getRotation(), getGlobalX(), getGlobalY()), getGlobalX(), getGlobalY());
+                    ((Agar)getWorld()).addObject(new MassBlob(cell.getColor(), getRotation(), getGlobalX(), getGlobalY()), getGlobalX(), getGlobalY());
                     removeMass(10);
                     keyCounter = 0;
                 }
