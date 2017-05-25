@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.params=
-comment0.target=void\ act()
-comment1.params=massText
-comment1.target=void\ updateImage(int)
-numComments=2
+comment0.target=Cell\ players()
+comment1.params=
+comment1.target=void\ act()
+comment2.params=massText
+comment2.target=void\ updateImage(int)
+numComments=3
