@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class protein extends ScrollActor
+public class Protein extends ScrollActor
 {
     /**
      * Act - do whatever the protein wants to do. This method is called whenever
@@ -19,7 +19,7 @@ public class protein extends ScrollActor
      
     }
     
-    public protein(int color) {
+    public Protein(int color) {
         super();
         switch(color) {
             case 0:

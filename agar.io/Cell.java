@@ -7,25 +7,34 @@ import java.awt.Color;
  * @author Wayde Gilliam, Brian Turner, Cecilia Martin, Ethan Hendricks
  */
 public class Cell extends ScrollActor {
+    int size = 30;
     int speed = 7;
     int proteinMass = 10;
-    int mass = 0;
-    int size = 30;
+    int mass = 20;
     int virus = -60;
     int t = 0;
     int maxSpeed = speed;
     int keyCounter = 0;
     
+    public Cell() {
+        super();
+        
+        GreenfootImage cell = new GreenfootImage(size, size);
+        cell.setColor(Color.BLUE);
+        cell.fillOval(0, 0, size, size);
+        setImage(cell);
+    }
+    
     public void act() {
         MouseInfo m = Greenfoot.getMouseInfo();
         
         GreenfootImage cell = new GreenfootImage(size, size);
-        cell.setColor(Color.RED);
+        cell.setColor(Color.BLUE);
         cell.fillOval(0, 0, size, size);
         setImage(cell);
-
+        
         if (m != null) {
-            int mouseDistance = (int)Math.pow((Math.pow((m.getX() - 450), 2) + Math.pow((m.getY() - 300), 2)), .5);
+            int mouseDistance = (int)Math.pow((Math.pow((m.getX() - ((Agar)getWorld()).getWidth()/2), 2) + Math.pow((m.getY() - ((Agar)getWorld()).getHeight()/2), 2)), .5);
            
             if (mouseDistance <= 20) {
                 speed = 0;
@@ -59,13 +68,13 @@ public class Cell extends ScrollActor {
             getWorld().moveCamera(speed);
         }
         
-        if (isTouching(protein.class)) {
-            removeTouching(protein.class);
+        if (isTouching(Protein.class)) {
+            removeTouching(Protein.class);
             addMass(1);
         }
         
-        if(isTouching(virus.class) && (getMass() > 40)){
-            removeTouching(virus.class);
+        if(isTouching(Virus.class) && (getMass() > 40)){
+            removeTouching(Virus.class);
             divide();
         }
         
@@ -73,16 +82,20 @@ public class Cell extends ScrollActor {
             addMass(1);
         }
         
+        
         if(Greenfoot.isKeyDown("w")) {
-            if (keyCounter > 5) {
-                ((agar)getWorld()).spawnMass(getGlobalX(), getGlobalY());
-                keyCounter = 0;
-            }
-            else {
-                keyCounter++;
+            if (mass > 20) {
+                if (keyCounter > 5) {
+                    ((Agar)getWorld()).addObject(new Mass(cell.getColor(), getRotation(), getGlobalX(), getGlobalY()), getGlobalX(), getGlobalY());
+                    removeMass(10);
+                    keyCounter = 0;
+                }
+                else {
+                    keyCounter++;
+                }
             }
         }
-    }
+        }
     
     public int getMass() {
         return mass;
@@ -115,15 +128,15 @@ public class Cell extends ScrollActor {
     public void divide() {
         removeMass(60);
         
-        if(this.mass <= 0){
-            this.size = 20;
-            this.mass = 20;
-            this.speed = 5;
+        if(mass <= 0){
+            size = 20;
+            mass = 20;
+            speed = 5;
         }
     }
     
     public void counter() {
-        Counter counter = ((agar)getWorld()).getCounter();  // get a reference to the counter within the world
+        Counter counter = ((Agar)getWorld()).getCounter();  // get a reference to the counter within the world
         counter.bumpCount(mass, speed);
     }
     
@@ -133,6 +146,4 @@ public class Cell extends ScrollActor {
         return output;
     }
     */
-   
-   
 }

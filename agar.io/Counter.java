@@ -10,7 +10,7 @@ import java.awt.Color;
 public class Counter extends Actor
 {
     public Counter() {
-        setImage(new GreenfootImage("0", 28, Color.WHITE, null));
+        setImage(new GreenfootImage("20", 28, Color.WHITE, null));
     }
     
     /**
