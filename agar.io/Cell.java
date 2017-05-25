@@ -7,32 +7,35 @@ import java.awt.Color;
  * @author Wayde Gilliam, Brian Turner, Cecilia Martin, Ethan Hendricks
  */
 public class Cell extends ScrollActor {
-    int size = 30;
-    int speed = 7;
-    int proteinMass = 10;
-    int mass = 20;
-    int virus = -60;
-    int t = 0;
-    int maxSpeed = speed;
-    int keyCounter = 0;
+    //Variables
+    int size = 30;  //Value for image scaling
+    int speed = 7;  //Cell travel speed
+    int mass = 20;  //Representative value for cell size
+    int virus = -60;    //Mass-loss value for viruses  
+    int maxSpeed = speed;   //Max Speed for cell
+    int keyCounter = 0; //Time amount for mass ejection
     
     public Cell() {
         super();
         
-        GreenfootImage cell = new GreenfootImage(size, size);
+        //Setting Cell Image Before Initializing world
+        GreenfootImage cell = new GreenfootImage(size, size);   
         cell.setColor(Color.BLUE);
         cell.fillOval(0, 0, size, size);
         setImage(cell);
     }
     
     public void act() {
+        //Variable for mouse position
         MouseInfo m = Greenfoot.getMouseInfo();
         
+        //Setting Cell Image After Initializing
         GreenfootImage cell = new GreenfootImage(size, size);
         cell.setColor(Color.BLUE);
         cell.fillOval(0, 0, size, size);
         setImage(cell);
         
+        //Slowing Cell Speed With Mouse
         if (m != null) {
             int mouseDistance = (int)Math.pow((Math.pow((m.getX() - ((Agar)getWorld()).getWidth()/2), 2) + Math.pow((m.getY() - ((Agar)getWorld()).getHeight()/2), 2)), .5);
            
@@ -62,27 +65,31 @@ public class Cell extends ScrollActor {
             }
         }
         
+        //Getting Mouse location for direction
         if (m != null) {
             turnTowards(m.getX(), m.getY());
             getWorld().setCameraDirection(getRotation());
             getWorld().moveCamera(speed);
         }
         
+        //Protein Colition Detection
         if (isTouching(Protein.class)) {
             removeTouching(Protein.class);
             addMass(1);
         }
         
+        //Virus Collision Detection
         if(isTouching(Virus.class) && (getMass() > 40)){
             removeTouching(Virus.class);
             divide();
         }
         
+        //Debug Testing
         if(Greenfoot.isKeyDown("enter")) {
             addMass(1);
         }
         
-        
+        //Ejecting Mass From Cell
         if(Greenfoot.isKeyDown("w")) {
             if (mass > 20) {
                 if (keyCounter > 5) {
@@ -97,10 +104,12 @@ public class Cell extends ScrollActor {
         }
         }
     
+    //Gets Mass for Cell
     public int getMass() {
         return mass;
     }
     
+    //Adding Mass to Cell
     public void addMass(int num) {
         for (int i = 0; i < num; i++) {
             size += 1;
@@ -113,6 +122,7 @@ public class Cell extends ScrollActor {
         counter();
     }
     
+    //Removing Mass and Scaling Speed
     public void removeMass(int num) {
         for (int i = 0; i < num; i++) {
             size -= 1;
@@ -125,6 +135,7 @@ public class Cell extends ScrollActor {
         counter();
     }
     
+    //Cell Divison
     public void divide() {
         removeMass(60);
         
@@ -135,6 +146,7 @@ public class Cell extends ScrollActor {
         }
     }
     
+    //Adding Score to Mass Counter
     public void counter() {
         Counter counter = ((Agar)getWorld()).getCounter();  // get a reference to the counter within the world
         counter.bumpCount(mass, speed);
