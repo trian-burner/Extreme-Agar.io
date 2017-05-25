@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.params=
-comment0.target=void\ act()
-comment0.text=public\ Cell\ players(){\r\n\ \ \ \ \ \ \ \ //agar\ agarWorld\ \=\ (agar)getWorld();\r\n\ \ \ \ \ \ \ \ //List<Cell>\ playersList\ \=\ agarWorld.getObjects(Cell.class);\r\n\ \ \ \ \ \ \ \ Cell\ player\ \=\ null;\r\n\ \ \ \ \ \ \ \ for(int\ i\ \=\ 0;\ i\ <\ playersList.size();\ i++){\r\n\ \ \ \ \ \ \ \ \ \ \ \ //player\ \=\ playersList.get(i);\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ for\ (Object\ obj\ \:\ agarWorld.getObjects(Cell.class)){\r\n\ \ \ \ \ \ \ \ \ \ \ \ player\ \=\ (Cell)\ obj;\ //\ sub-casting\r\n\ \ \ \ \ \ \ \ \ \ \ \ //\ change\ location\ of\ 'ps'\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ return\ player;\r\n}
-comment1.params=massText
-comment1.target=void\ updateImage(int)
-numComments=2
