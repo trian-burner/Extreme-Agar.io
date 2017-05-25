@@ -9,4 +9,6 @@ comment3.params=
 comment3.target=void\ spawnProteins()
 comment4.params=
 comment4.target=void\ spawnViruses()
-numComments=5
+comment5.params=x\ y
+comment5.target=void\ spawnMass(int,\ int)
+numComments=6

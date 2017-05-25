@@ -22,13 +22,21 @@ public class protein extends ScrollActor
     public protein(int color) {
         super();
         switch(color) {
-            case 1:
-                setImage("blueProtein.bmp");
+            case 0:
+                setImage("blueProtein.png");
                 break;
-            case 2: 
-                setImage("redProtein.bmp");
+            case 1: 
+                setImage("redProtein.png");
                 break;
-                
+            case 2:
+                setImage("orangeProtein.png");
+                break;
+            case 3:
+                setImage("pinkProtein.png");
+                break;
+            case 4:
+                setImage("greenProtein.png");
+                break;
             }
     }
 }
