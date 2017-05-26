@@ -15,6 +15,7 @@ public class Cell extends ScrollActor {
     int maxSpeed = speed;   //Max Speed for cell (used for setting variable speed)
     int keyCounter = 0; //Wait time for another mass ejection
     int vsd = 20; // [Variable Speed Distance] the distance from the Cell in which the speed changes
+    boolean spawn = false;
     
     // constructor
     public Cell() {
@@ -115,6 +116,13 @@ public class Cell extends ScrollActor {
         if(Greenfoot.isKeyDown("enter")) {
             addMass(1);
         }
+        
+        // death tester
+        if (spawn == false) {
+            getWorld().addObject(new DeathTester(), getGlobalX(), getGlobalY() + 200);
+        }
+        
+        spawn = true;
     }
     
     //Gets Mass for Cell
@@ -166,5 +174,10 @@ public class Cell extends ScrollActor {
     public void counter() {
         Counter counter = ((Agar)getWorld()).getCounter();  // get a reference to the counter within the world
         counter.bumpCount(mass, speed);
+    }
+    
+    public void death() {
+        GameOver die = new GameOver();
+        Greenfoot.setWorld(die);
     }
 }
