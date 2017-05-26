@@ -1,5 +1,5 @@
 import greenfoot.*;
-import java.awt.Color;
+import java.awt.Color; // importing color for setting the color of the Cell
 
 /**
  * A cell is the circle of mass that the player controls around the world.
@@ -12,9 +12,11 @@ public class Cell extends ScrollActor {
     int speed = 7;  //Cell travel speed
     int mass = 20;  //Representative value for cell size
     int virus = -60;    //Mass-loss value for viruses  
-    int maxSpeed = speed;   //Max Speed for cell
-    int keyCounter = 0; //Time amount for mass ejection
+    int maxSpeed = speed;   //Max Speed for cell (used for setting variable speed)
+    int keyCounter = 0; //Wait time for another mass ejection
+    int vsd = 20; // [Variable Speed Distance] the distance from the Cell in which the speed changes
     
+    // constructor
     public Cell() {
         super();
         
@@ -37,25 +39,27 @@ public class Cell extends ScrollActor {
         
         //Slowing Cell Speed With Mouse
         if (m != null) {
+            // calculates the distance between the mouse and the cell
             int mouseDistance = (int)Math.pow((Math.pow((m.getX() - ((Agar)getWorld()).getWidth()/2), 2) + Math.pow((m.getY() - ((Agar)getWorld()).getHeight()/2), 2)), .5);
            
-            if (mouseDistance <= 20) {
+            // changes the speed of the Cell based on how close the mouse is to it
+            if (mouseDistance <= vsd) {
                 speed = 0;
             }
-            else if ((mouseDistance <= 20 + 15) && (mouseDistance > 20)) {
+            else if ((mouseDistance <= vsd + 15) && (mouseDistance > vsd)) {
                 speed = 1;
             }
-            else if ((mouseDistance <= 20 + 30) && (mouseDistance > 20 + 15)) {
+            else if ((mouseDistance <= vsd + 30) && (mouseDistance > vsd + 15)) {
                 if (maxSpeed >= 2) {
                    speed = 2; 
                 }
             }
-            else if ((mouseDistance <= 20 + 45) && (mouseDistance > 20 + 30)) {
+            else if ((mouseDistance <= vsd + 45) && (mouseDistance > vsd + 30)) {
                 if (maxSpeed >= 2) {
                    speed = 3; 
                 }
             }
-            else if ((mouseDistance <= 20 + 60) && (mouseDistance > 20 + 45)) {
+            else if ((mouseDistance <= vsd + 60) && (mouseDistance > vsd + 45)) {
                 if (maxSpeed >= 2) {
                    speed = 4; 
                 }
@@ -78,18 +82,14 @@ public class Cell extends ScrollActor {
             addMass(1);
         }
         
-        
-        
         //MassBlob Collision Detection
-        if(isTouching(MassBlob.class)){
-            
-            
-            removeTouching(MassBlob.class);
-            addMass(10);
-            
-      
+        MassBlob massBlob = (MassBlob)getOneIntersectingObject(MassBlob.class);
+        if(massBlob != null){
+            if (massBlob.shot == true) {
+                removeTouching(MassBlob.class);
+                addMass(10); 
+            }
         }
-        
         
         //Virus Collision Detection
         if(isTouching(Virus.class) && (getMass() > 40)){
@@ -97,14 +97,9 @@ public class Cell extends ScrollActor {
             divide();
         }
         
-        //Debug Testing
-        if(Greenfoot.isKeyDown("enter")) {
-            addMass(1);
-        }
-        
         //Ejecting Mass From Cell
         if(Greenfoot.isKeyDown("w")) {
-            if (mass > 20) {
+            if (mass > 30) {
                 if (keyCounter > 5) {
                     ((Agar)getWorld()).addObject(new MassBlob(cell.getColor(), getRotation(), getGlobalX(), getGlobalY()), getGlobalX(), getGlobalY());
                     removeMass(10);
@@ -115,7 +110,12 @@ public class Cell extends ScrollActor {
                 }
             }
         }
+        
+        //Debug Testing
+        if(Greenfoot.isKeyDown("enter")) {
+            addMass(1);
         }
+    }
     
     //Gets Mass for Cell
     public int getMass() {
@@ -150,12 +150,15 @@ public class Cell extends ScrollActor {
     
     //Cell Divison
     public void divide() {
-        removeMass(60);
-        
-        if(mass <= 0){
-            size = 20;
-            mass = 20;
-            speed = 5;
+        if (mass > 60) {
+            removeMass(40);
+        }
+        else {
+            for (int i = 0; i < 40; i++) {
+                if (mass > 20) {
+                    removeMass(1);
+                }
+            }
         }
     }
     
@@ -164,11 +167,4 @@ public class Cell extends ScrollActor {
         Counter counter = ((Agar)getWorld()).getCounter();  // get a reference to the counter within the world
         counter.bumpCount(mass, speed);
     }
-    
-    /*public String toString(){
-        String output = "A cell has been created!";
-        
-        return output;
-    }
-    */
 }

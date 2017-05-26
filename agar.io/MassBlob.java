@@ -15,7 +15,7 @@ public class MassBlob extends ScrollActor
     int cellY;
     boolean release = false;
     boolean shot;
-    
+    int vsd = 30; // [Variable Shot Distance]
     
     public MassBlob(Color color, int rotation, int cellX, int cellY) {
         this.color = color;
@@ -59,22 +59,22 @@ public class MassBlob extends ScrollActor
         
 
         if (m != null && shot == false) {           
-            if (distance <= 25) {
+            if (distance <= vsd) {
                 move(25);
             }
-            else if ((distance <= 50) && (distance > 25)) {
+            else if ((distance <= 2*vsd) && (distance > vsd)) {
                 move(20);
             }
-            else if ((distance <= 100) && (distance > 50)) {
+            else if ((distance <= 4*vsd) && (distance > 2*vsd)) {
                 move(15);
             }
-            else if ((distance <= 150) && (distance > 100)) {
+            else if ((distance <= 6*vsd) && (distance > 4*vsd)) {
                 move(10);
             }
-            else if ((distance <= 190) && (distance > 150)) {
+            else if ((distance <= 6*vsd+40) && (distance > 6*vsd)) {
                 move(5);
             }
-            else if ((distance <= 210) && (distance > 190)) {
+            else if ((distance <= 8*vsd+10) && (distance > 6*vsd+40)) {
                 move(3);
             }
             else {
