@@ -14,5 +14,5 @@ comment5.target=void\ divide()
 comment6.params=
 comment6.target=void\ counter()
 comment7.params=
-comment7.target=void\ death()
+comment7.target=void\ scoreBoard()
 numComments=8
