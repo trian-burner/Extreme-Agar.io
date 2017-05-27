@@ -1,14 +1,16 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Agar()
+comment0.params=nameString
+comment0.target=Agar(java.lang.String)
 comment1.params=
 comment1.target=Counter\ getCounter()
-comment2.params=
-comment2.target=ScoreBoard\ getScoreBoard()
+comment2.params=name
+comment2.target=void\ newName(java.lang.String)
 comment3.params=
-comment3.target=void\ spawnPlayer()
+comment3.target=ScoreBoard\ getScoreBoard()
 comment4.params=
-comment4.target=void\ spawnProteins()
-comment5.params=
-comment5.target=void\ spawnViruses()
-numComments=6
+comment4.target=void\ spawnPlayer()
+comment5.params=amount
+comment5.target=void\ spawnProteins(int)
+comment6.params=
+comment6.target=void\ spawnViruses()
+numComments=7

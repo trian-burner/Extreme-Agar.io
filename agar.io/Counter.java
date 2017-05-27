@@ -10,13 +10,13 @@ import java.awt.Color;
 public class Counter extends Actor
 {
     public Counter() {
-        setImage(new GreenfootImage("20", 28, Color.WHITE, null));
+        setImage(new GreenfootImage("20", 22, Color.black, null));
     }
     
     /**
      * Increase the total amount displayed on the counter, by a given amount.
      */
-    public void bumpCount(int mass, int speed) {
-        setImage(new GreenfootImage("" + mass, 28, Color.WHITE, null));
+    public void updateCount(int mass, int speed) {
+        setImage(new GreenfootImage("" + mass, 22, Color.black, null));
     }
 }

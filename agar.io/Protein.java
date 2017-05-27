@@ -16,7 +16,6 @@ public class Protein extends ScrollActor
     {
         Actor cell;
         cell = getOneIntersectingObject(Cell.class);
-     
     }
     
     public Protein(int color) {

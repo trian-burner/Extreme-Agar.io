@@ -18,11 +18,5 @@ public class DeathTester extends ScrollActor
         if(cell != null){
             cell.death();
         }
-        
-        //Virus Collision Detection
-//         if(isTouching(Virus.class) && (getMass() > 40)){
-//             removeTouching(Virus.class);
-//             divide();
-//         }
     }    
 }

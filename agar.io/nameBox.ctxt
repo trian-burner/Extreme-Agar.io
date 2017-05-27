@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=nameBox()
+comment1.params=name
+comment1.target=nameBox(java.lang.String)
+comment2.params=
+comment2.target=void\ updateImage()
+comment3.params=
+comment3.target=void\ act()
+numComments=4

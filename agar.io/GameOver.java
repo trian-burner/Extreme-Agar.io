@@ -7,16 +7,19 @@ import greenfoot.*;
  * @version (a version number or a date)
  */
 public class GameOver extends World {
+    String name;
+    
     /**
      * Constructor for objects of class GameOver.
      * 
      */
-    public GameOver()
+    public GameOver(String name)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 600, 1);
+        addObject(new FadeIn(), 450, 300);
+        this.name = name;
     }
-    
     
     public void act() {
         MouseInfo m = Greenfoot.getMouseInfo();
@@ -29,7 +32,7 @@ public class GameOver extends World {
         
         
         if (Greenfoot.mouseClicked(this) && inRange == true) {
-            World newWorld = new Agar();
+            World newWorld = new StartScreen(name);
             Greenfoot.setWorld(newWorld);
         }
     }

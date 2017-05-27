@@ -8,16 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class StartScreen extends World
 {
-
     /**
      * Constructor for objects of class StartScreen.
      * 
      */
-    public StartScreen()
-    {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(900, 600, 1); 
+    public StartScreen() {
+        super(900, 600, 1);
+        addObject(new nameBox(), getWidth()/2, 350);
     }
     
-    
+    public StartScreen(String name) {
+        super(900, 600, 1);
+        addObject(new nameBox(name), getWidth()/2, 350);
+    }
 }
