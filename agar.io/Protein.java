@@ -8,6 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Protein extends ScrollActor
 {
+    String[] colors = {"blueProtein.png", "redProtein.png", "orangeProtein.png", "pinkProtein.png", "greenProtein.png"};
+    String color;
+    
     /**
      * Act - do whatever the protein wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,24 +21,14 @@ public class Protein extends ScrollActor
         cell = getOneIntersectingObject(Cell.class);
     }
     
-    public Protein(int color) {
+    public Protein(int num) {
         super();
-        switch(color) {
-            case 0:
-                setImage("blueProtein.png");
-                break;
-            case 1: 
-                setImage("redProtein.png");
-                break;
-            case 2:
-                setImage("orangeProtein.png");
-                break;
-            case 3:
-                setImage("pinkProtein.png");
-                break;
-            case 4:
-                setImage("greenProtein.png");
-                break;
-            }
+        color = colors[num];
+        setImage(color);
+    }
+    
+    public Protein(String color) {
+        super();
+        this.color = color;
     }
 }

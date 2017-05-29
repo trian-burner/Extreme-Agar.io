@@ -5,4 +5,6 @@ comment1.params=s
 comment1.target=CellPackage\ update(CellPackage)
 comment2.params=
 comment2.target=void\ stopIt()
-numComments=3
+comment3.params=
+comment3.target=WorldPackage\ getWorld()
+numComments=4

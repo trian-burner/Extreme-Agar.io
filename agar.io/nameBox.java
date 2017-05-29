@@ -35,10 +35,11 @@ public class nameBox extends Actor {
         }
         if (key == null) return;
         if ("enter".equals(key) && text.length() > 0) {
-            Greenfoot.setWorld(new Agar(text));
+            int multiplayer = ((StartScreen)getWorld()).screenNum;
+            Greenfoot.setWorld(new Agar(text, multiplayer));
         }
         if ("backspace".equals(key) && text.equals(name)) text = "";
-        if ("backspace".equals(key) && text.length() > 0 && !text.equals("     Enter a name")) text = text.substring(0, text.length() - 1);
+        if ("backspace".equals(key) && text.length() > 0 && !text.equals("                   Enter a name")) text = text.substring(0, text.length() - 1);
         if ("escape".equals(key)) text = "";
         if ("space".equals(key)) key = " ";
         if (key.length() == 1 && text.length() < MAX_INPUT_LENGTH) text += key;

@@ -1,4 +1,5 @@
 import greenfoot.*;
+import java.util.ArrayList;
 
 public class Agar  extends ScrollWorld{
     Counter theCounter; //mass counter
@@ -11,11 +12,16 @@ public class Agar  extends ScrollWorld{
     CellPackage otherCellP;
     ServerClient serverClient;
     Server server;
+    int multiplayer = 0;
+    ArrayList<ProteinPackage> p;
+    ArrayList<VirusPackage> v;
+    WorldPackage wp;
     
-    public Agar(String nameString) {
+    public Agar(String nameString, int multiplayer) {
         //Creating a world size of 700x500 cells with 1x1 pixels
         super(900, 600, 1, 4900, 4600);
         
+        this.multiplayer = multiplayer;
         this.nameString = nameString;
         
         int startX = (int)(Math.random() * (getFullWidth() - getWidth()) + (getWidth() / 2));
@@ -31,16 +37,27 @@ public class Agar  extends ScrollWorld{
         theCounter = new Counter();
         addObject(theCounter, getWidth()/2, getHeight()/2+8);
         
-        spawnProteins(500);
-        spawnViruses();
-        
-        //thisCellP = new CellPackage(thisCell);
-        //otherCellP = new CellPackage();
-        //server = new Server();
-        //serverClient = new ServerClient();
-        
-        //otherCell = new MultiplayerCell();
-        //addObject(otherCell, 20, 20);
+        if (multiplayer == 0) {
+            spawnProteins(500);
+            spawnViruses(50);
+        } else if (multiplayer == 1) {
+            spawnProteins(500);
+            spawnViruses(50);
+            wp = new WorldPackage(p, v);
+            thisCellP = new CellPackage(thisCell);
+            otherCellP = new CellPackage();
+            server = new Server(wp);
+            otherCell = new MultiplayerCell();
+            addObject(otherCell, 20, 20);
+        } else if (multiplayer == 2) {
+            thisCellP = new CellPackage(thisCell);
+            otherCellP = new CellPackage();
+            serverClient = new ServerClient();
+            wp = serverClient.getWorld();
+            unpackWorldPackage();
+            otherCell = new MultiplayerCell();
+            addObject(otherCell, 20, 20);
+        }
         
         //System.out.println(new ScoreBoard().players());
         //scoreBoard = new ScoreBoard();
@@ -48,12 +65,17 @@ public class Agar  extends ScrollWorld{
     }
     
     public void act() {
-        //thisCellP.update(thisCell);
-        
-        //otherCellP = server.update(thisCellP);
-        //otherCellP = serverClient.update(thisCellP);
-        
-        //otherCell.update(otherCellP);
+        if (multiplayer == 1) {
+            thisCellP.update(thisCell);
+            otherCellP = server.update(thisCellP);
+            otherCell.update(otherCellP);
+        }
+        else if (multiplayer == 2) {
+            thisCellP.update(thisCell);
+            otherCellP = serverClient.update(thisCellP);
+            otherCell.update(otherCellP);
+        }
+        else {}
     }
     
     public Counter getCounter() {
@@ -77,19 +99,33 @@ public class Agar  extends ScrollWorld{
     }
     
     public void spawnProteins(int amount) {
-        //World world = getWorld();
         for (int i = 0; i < amount; i++) {
             int x = (int)(Math.random() * (getFullWidth() - getWidth()) + (getWidth() / 2));
             int y = (int)(Math.random() * (getFullHeight() - getHeight()) + (getHeight() / 2));
-            addObject(new Protein((int)(Math.random() * 5)), x, y);
+            Protein protein = new Protein((int)(Math.random() * 5));
+            addObject(protein, x, y);
+            ProteinPackage pPackage = new ProteinPackage(protein);
+            p.add(pPackage);
         }
     }
     
-    public void spawnViruses(){
-        for(int i = 0; i < 50; i++){
+    public void spawnViruses(int amount){
+        for(int i = 0; i < amount; i++){
             int x = (int)(Math.random() * (getFullWidth() - getWidth()) + (getWidth() / 2));
             int y = (int)(Math.random() * (getFullHeight() - getHeight()) + (getHeight() / 2));
-            addObject(new Virus(), x, y);
+            Virus virus = new Virus();
+            addObject(virus, x, y);
+            VirusPackage vPackage = new VirusPackage(virus);
+            v.add(vPackage);
+        }
+    }
+    
+    public void unpackWorldPackage() {
+        for (int i = 0; i < wp.p.size(); i++) {
+            addObject(new Protein(wp.p.get(i).color), wp.p.get(i).x, wp.p.get(i).y);
+        }
+        for (int i = 0; i < wp.v.size(); i++) {
+            addObject(new Virus(), wp.v.get(i).x, wp.v.get(i).y);
         }
     }
 }

@@ -5,6 +5,7 @@ import java.awt.Color;
 public class ServerClient {
     String address = "localhost";
     Socket client;
+    WorldPackage wp;
     
     public ServerClient() {
         try {
@@ -12,11 +13,13 @@ public class ServerClient {
             client = new Socket(address, 2050);
             System.out.println("Connection established");
             
+            ObjectInputStream in = new ObjectInputStream(client.getInputStream());
+            wp = (WorldPackage)in.readObject(); 
         } catch (ConnectException e) {
             System.out.println("Connection unsuccessful");
         } catch (IOException e) {
             e.printStackTrace();
-        } 
+        } catch (ClassNotFoundException e) {}
     }
     
     public CellPackage update(CellPackage s) {
@@ -30,7 +33,7 @@ public class ServerClient {
             ObjectInputStream in = new ObjectInputStream(client.getInputStream());
             r = (CellPackage)in.readObject(); 
             //System.out.println("recieved");
-            System.out.println(r);
+            //System.out.println(r);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {}
@@ -43,5 +46,9 @@ public class ServerClient {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    
+    public WorldPackage getWorld() {
+        return wp;
     }
 }
