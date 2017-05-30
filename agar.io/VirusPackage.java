@@ -3,8 +3,8 @@ public class VirusPackage implements java.io.Serializable {
     int x;
     int y;
 
-    public VirusPackage(Virus v) {
-        this.x = v.getGlobalX();
-        this.y = v.getGlobalY();
+    public VirusPackage(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 }

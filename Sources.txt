@@ -1,0 +1,11 @@
+https://www.greenfoot.org/topics/5532
+https://www.greenfoot.org/topics/3843
+http://www.greenfoot.org/scenarios/5806
+
+https://www.tutorialspoint.com/java/java_networking.htm
+https://docs.oracle.com/javase/7/docs/api/java/net/Socket.html
+https://stackoverflow.com/questions/13984142/how-to-write-array-to-outputstream-in-java
+https://docs.oracle.com/javase/7/docs/api/java/io/ObjectInputStream.html#readObject()
+https://www.tutorialspoint.com/java/java_serialization.htm
+https://stackoverflow.com/questions/9481865/getting-the-ip-address-of-the-current-machine-using-java
+https://docs.oracle.com/javase/7/docs/api/java/net/InetAddress.html

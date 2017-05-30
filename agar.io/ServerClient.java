@@ -9,9 +9,9 @@ public class ServerClient {
     
     public ServerClient() {
         try {
-            System.out.println("Attempting conection to " + address + " on port 2050");
-            client = new Socket(address, 2050);
-            System.out.println("Connection established");
+            //System.out.println("Attempting conection to " + address + " on port 2051");
+            client = new Socket(address, 2052);
+            //System.out.println("Connection established");
             
             ObjectInputStream in = new ObjectInputStream(client.getInputStream());
             wp = (WorldPackage)in.readObject(); 
@@ -34,9 +34,12 @@ public class ServerClient {
             r = (CellPackage)in.readObject(); 
             //System.out.println("recieved");
             //System.out.println(r);
+        } catch (SocketException e) {
+            stopIt();
+            return null;
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {}
+        } catch (ClassNotFoundException e) {} 
         return r;
     }
     

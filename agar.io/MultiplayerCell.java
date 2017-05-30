@@ -33,10 +33,38 @@ public class MultiplayerCell extends ScrollActor {
         cell.setColor(color);
         cell.fillOval(0, 0, size, size);
         setImage(cell);
+        
+        if (isTouching(Protein.class)) { 
+            hitProtein();
+        }
+        
+        if(isTouching(Virus.class) && (getMass() >= 60)) {
+            hitVirus();
+        }
+        
+        MassBlob massBlob = (MassBlob)getOneIntersectingObject(MassBlob.class);
+        if(massBlob != null){ 
+            hitMassBlob(massBlob);
+        }
     }
     
     public int getMass() {
         return mass;
+    }
+    
+    public void hitProtein() {
+        removeTouching(Protein.class);
+        //((Agar)getWorld()).spawnProteins(1);
+    }
+    
+    public void hitVirus() {
+        removeTouching(Virus.class);
+    }
+    
+    public void hitMassBlob(MassBlob massBlob) {
+        if (massBlob.shot == true) {
+            removeTouching(MassBlob.class);
+        }
     }
     
 //     public void divide() {

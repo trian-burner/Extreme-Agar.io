@@ -10,16 +10,17 @@ public class Server extends Thread {
         this.wp = wp;
         
         try {
-            serverSocket = new ServerSocket(2050);
-            System.out.println(Inet4Address.getLocalHost().getHostAddress());
-            System.out.println("Waiting for client on port " + serverSocket.getLocalPort() + "...");
+            serverSocket = new ServerSocket(2052);
+            
+            //System.out.println(Inet4Address.getLocalHost().getHostAddress());
+            //System.out.println("Waiting for client on port " + serverSocket.getLocalPort() + "...");
             server = serverSocket.accept();
-            System.out.println("Connected to " + server.getRemoteSocketAddress());
+            //System.out.println("Connected to " + server.getRemoteSocketAddress());
             
             OutputStream outToClient = server.getOutputStream();
             ObjectOutputStream oos = new ObjectOutputStream(outToClient);
             oos.writeObject(wp);
-        }catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -46,8 +47,8 @@ public class Server extends Thread {
     
     public void stopIt() {
         try {
-            server.close();
             serverSocket.close();
+            server.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

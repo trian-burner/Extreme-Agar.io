@@ -13,9 +13,10 @@ public class Agar  extends ScrollWorld{
     ServerClient serverClient;
     Server server;
     int multiplayer = 0;
-    ArrayList<ProteinPackage> p;
-    ArrayList<VirusPackage> v;
+    ArrayList<ProteinPackage> p = new ArrayList<ProteinPackage>();
+    ArrayList<VirusPackage> v = new ArrayList<VirusPackage>();
     WorldPackage wp;
+    boolean dying = false;
     
     public Agar(String nameString, int multiplayer) {
         //Creating a world size of 700x500 cells with 1x1 pixels
@@ -66,16 +67,47 @@ public class Agar  extends ScrollWorld{
     
     public void act() {
         if (multiplayer == 1) {
-            thisCellP.update(thisCell);
-            otherCellP = server.update(thisCellP);
-            otherCell.update(otherCellP);
+            if(Greenfoot.isKeyDown("escape") && dying == false) {
+                server.stopIt();
+                thisCell.death();
+                thisCell = null;
+                dying = true;
+            }
+            
+            if (thisCell != null) {
+                thisCellP.update(thisCell);
+                
+                otherCellP = server.update(thisCellP);
+                otherCell.update(otherCellP);
+            }            
         }
         else if (multiplayer == 2) {
-            thisCellP.update(thisCell);
-            otherCellP = serverClient.update(thisCellP);
-            otherCell.update(otherCellP);
+            if (thisCell != null) {
+                thisCellP.update(thisCell);
+            }
+            
+            if (serverClient.update(thisCellP) == null) {
+                removeObject(otherCell);
+                otherCell = null;
+                serverClient.stopIt();
+            }
+            
+            if (otherCell != null) {
+                otherCellP = serverClient.update(thisCellP);
+                otherCell.update(otherCellP);
+            }
+            
+            if(Greenfoot.isKeyDown("escape")) {
+                serverClient.stopIt();
+                thisCell.death();
+            }
         }
-        else {}
+        else {
+            if(Greenfoot.isKeyDown("escape") && dying == false) {
+                thisCell.death();
+                dying = true;
+            }
+        }
     }
     
     public Counter getCounter() {
@@ -102,9 +134,10 @@ public class Agar  extends ScrollWorld{
         for (int i = 0; i < amount; i++) {
             int x = (int)(Math.random() * (getFullWidth() - getWidth()) + (getWidth() / 2));
             int y = (int)(Math.random() * (getFullHeight() - getHeight()) + (getHeight() / 2));
-            Protein protein = new Protein((int)(Math.random() * 5));
-            addObject(protein, x, y);
-            ProteinPackage pPackage = new ProteinPackage(protein);
+            int c = (int)(Math.random() * 5);
+            addObject(new Protein(c), x, y);
+            
+            ProteinPackage pPackage = new ProteinPackage(x, y, c);
             p.add(pPackage);
         }
     }
@@ -113,9 +146,9 @@ public class Agar  extends ScrollWorld{
         for(int i = 0; i < amount; i++){
             int x = (int)(Math.random() * (getFullWidth() - getWidth()) + (getWidth() / 2));
             int y = (int)(Math.random() * (getFullHeight() - getHeight()) + (getHeight() / 2));
-            Virus virus = new Virus();
-            addObject(virus, x, y);
-            VirusPackage vPackage = new VirusPackage(virus);
+            addObject(new Virus(), x, y);
+            
+            VirusPackage vPackage = new VirusPackage(x, y);
             v.add(vPackage);
         }
     }
