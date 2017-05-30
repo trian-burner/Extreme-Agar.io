@@ -178,6 +178,8 @@ public class Cell extends ScrollActor {
     public void counter() {
         Counter counter = ((Agar)getWorld()).getCounter();  // get a reference to the counter within the world
         counter.updateCount(mass, speed);
+        //ScoreBoard scoreboard = ((Agar)getWorld()).getScoreBoard();
+        //scoreboard.updateScore(mass);
     }
     
     /**

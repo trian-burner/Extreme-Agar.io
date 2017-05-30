@@ -60,11 +60,10 @@ public class Agar  extends ScrollWorld{
             addObject(otherCell, 20, 20);
         }
         
-        //System.out.println(new ScoreBoard().players());
-        //scoreBoard = new ScoreBoard();
-        //addObject(scoreBoard, 70, 25);
+        scoreBoard = new ScoreBoard();
+        addObject(scoreBoard, 70, 25);
     }
-    
+
     public void act() {
         if (multiplayer == 1) {
             if(Greenfoot.isKeyDown("escape") && dying == false) {
@@ -79,7 +78,7 @@ public class Agar  extends ScrollWorld{
                 
                 otherCellP = server.update(thisCellP);
                 otherCell.update(otherCellP);
-            }            
+            }
         }
         else if (multiplayer == 2) {
             if (thisCell != null) {
@@ -107,6 +106,12 @@ public class Agar  extends ScrollWorld{
                 thisCell.death();
                 dying = true;
             }
+        }
+        
+        if(multiplayer == 0){
+            scoreBoard.updateScore(thisCell.name, thisCell.getMass());
+        } else if(multiplayer == 1){
+            scoreBoard.updateScore(thisCell.name, thisCell.getMass(), otherCell.name, otherCell.getMass());
         }
     }
     

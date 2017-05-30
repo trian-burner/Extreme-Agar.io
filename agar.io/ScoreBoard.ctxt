@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.params=
 comment0.target=ScoreBoard()
-comment1.params=mass
-comment1.target=void\ bumpCount(int)
+comment1.params=thisName\ thisMass\ otherName\ otherMass
+comment1.target=void\ updateScore(java.lang.String,\ int,\ java.lang.String,\ int)
 comment1.text=\r\n\ Increase\ the\ total\ amount\ displayed\ on\ the\ counter,\ by\ a\ given\ amount.\r\n
-numComments=2
+comment2.params=thisName\ thisMass
+comment2.target=void\ updateScore(java.lang.String,\ int)
+numComments=3
