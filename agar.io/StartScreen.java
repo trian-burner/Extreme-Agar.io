@@ -1,39 +1,47 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class StartScreen here.
+ * The start up scren for the game. Contains input for name, and how you are playing the game (solo, server, client)
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Wayde Gilliam, Brian Turner, Cecilia Martin, Ethan Harris
  */
 public class StartScreen extends World
 {
-    String[] screens = {"startScreen.png", "startScreenServer.png", "startScreenClient.png"};
-    int screenNum = 0;
+    String[] screens = {"startScreen.png", "startScreenServer.png", "startScreenClient.png"};   //Array for the different screens
+    int screenNum = 0;  //Index for the screens array
     
     /**
      * Constructor for objects of class StartScreen.
-     * 
      */
     public StartScreen() {
         super(900, 600, 1);
         addObject(new nameBox(), getWidth()/2, 350);
     }
     
+    /**
+     * Constructor for objects of class StartScreen with name input
+     * 
+     * @param name Cell name
+     */
     public StartScreen(String name) {
         super(900, 600, 1);
         addObject(new nameBox(name), getWidth()/2, 350);
     }
     
+    /**
+     * Actor class for StartScreen
+     */
     public void act() {
-        MouseInfo m = Greenfoot.getMouseInfo();
+        //Variables
+        MouseInfo m = Greenfoot.getMouseInfo(); //Gets mouse info
+        boolean inRange = false;    //Mouse range on screen 
         
-        boolean inRange = false;
-        
+        //Sets mouse position
         if (m != null) {
             inRange = ((m.getX() < 640) && (m.getX() > 440)) && ((m.getY() < 268) && (m.getY() > 232));
         }
         
+        //Changes screens based on mouse clicks and position
         if (Greenfoot.mouseClicked(this) && inRange == true) {
             if (screenNum == 2) {
                 screenNum = 0;
