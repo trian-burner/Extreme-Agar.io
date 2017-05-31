@@ -1,9 +1,11 @@
 #BlueJ class context
 comment0.params=
 comment0.target=StartScreen()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ StartScreen.\r\n\ \r\n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ StartScreen.\r\n
 comment1.params=name
 comment1.target=StartScreen(java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ StartScreen\ with\ name\ input\r\n\ \r\n\ @param\ name\ Cell\ name\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Actor\ class\ for\ StartScreen\r\n
 numComments=3

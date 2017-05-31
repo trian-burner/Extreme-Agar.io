@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class protein here.
+ * The protein blobs that appear randomly throughout the game.
+ * Cells can eat proteins to gain mass.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Wayde Gilliam, Brian Turner, Cecilia Martin, Ethan Harris 
  */
 public class Protein extends ScrollActor
 {
@@ -21,14 +21,14 @@ public class Protein extends ScrollActor
         cell = getOneIntersectingObject(Cell.class);
     }
     
+    /**
+     * Constructor for the Protein class
+     * 
+     * @param num The color of the protein
+     */
     public Protein(int num) {
         super();
         color = colors[num];
         setImage(color);
-    }
-    
-    public Protein(String color) {
-        super();
-        this.color = color;
     }
 }

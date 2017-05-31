@@ -1,10 +1,9 @@
 import greenfoot.*;
 
 /**
- * Write a description of class DeathTester here.
+ * Used for testing and debugging "death" in the game
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Wayde Gilliam, Brian Turner, Cecilia Martin, Ethan Harris) 
  */
 public class DeathTester extends ScrollActor
 {
