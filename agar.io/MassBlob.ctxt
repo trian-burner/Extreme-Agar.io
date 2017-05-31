@@ -1,9 +1,11 @@
 #BlueJ class context
-comment0.params=color\ rotation\ cellX\ cellY
-comment0.target=MassBlob(java.awt.Color,\ int,\ int,\ int)
+comment0.params=color\ rotation\ cellX\ cellY\ vsd
+comment0.target=MassBlob(java.awt.Color,\ int,\ int,\ int,\ int)
+comment0.text=\r\n\ Creates\ a\ massblob\ at\ the\ cell's\ position\r\n\ \r\n\ @param\ color\ The\ Color\ of\ the\ cell\r\n\ @param\ rotation\ Orientation\ of\ the\ cell\r\n\ @param\ cellX\ Cell\ X\ position\r\n\ @param\ cellY\ Cell\ Y\ position\r\n\ @param\ vsd\ Variable\ Shot\ Distance\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Mas\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=boolean\ shotStatus()
+comment2.text=\r\n\ Returns\ the\ value\ for\ shot,\ being\ true\ or\ false\ (shot\ or\ not\ shot)\r\n
 numComments=3

@@ -4,7 +4,7 @@ import java.awt.Color; // importing color for setting the color of the Cell
 /**
  * A cell is the circle of mass that the player controls around the world.
  * 
- * @author Wayde Gilliam, Brian Turner, Cecilia Martin, Ethan Hendricks
+ * @author Wayde Gilliam, Brian Turner, Cecilia Martin, Ethan Harris
  */
 public class Cell extends ScrollActor {
     //Variables
@@ -271,7 +271,13 @@ public class Cell extends ScrollActor {
     public void ejectMass() {
         if (mass > 30) {
             if (keyCounter > 5) {
-                ((Agar)getWorld()).addObject(new MassBlob(cell.getColor(), getRotation(), getGlobalX(), getGlobalY()), getGlobalX(), getGlobalY());
+                if(mass <= 250){
+                    ((Agar)getWorld()).addObject(new MassBlob(cell.getColor(), getRotation(), getGlobalX(), getGlobalY(), 30), getGlobalX(), getGlobalY());
+                } else if(mass <= 500){
+                    ((Agar)getWorld()).addObject(new MassBlob(cell.getColor(), getRotation(), getGlobalX(), getGlobalY(), 50), getGlobalX(), getGlobalY());
+                } else {
+                    ((Agar)getWorld()).addObject(new MassBlob(cell.getColor(), getRotation(), getGlobalX(), getGlobalY(), 70), getGlobalX(), getGlobalY());
+                }
                 removeMass(10);
                 keyCounter = 0;
             }

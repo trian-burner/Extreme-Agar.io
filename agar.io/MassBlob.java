@@ -2,25 +2,36 @@ import greenfoot.*;
 import java.awt.Color;
 
 /**
- * Write a description of class Mass here.
+ * The class responsible for the mass ejected from the cell. Other cells can pick up mass blobs to gain
+ * additional mass.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Wayde Gilliam, Brian Turner, Cecilia Martin, Ethan Harris
  */
 public class MassBlob extends ScrollActor
-{
-    Color color;
-    int rotation;
-    int cellX;
-    int cellY;
-    boolean release = false;
-    boolean shot;
-    int vsd = 30; // [Variable Shot Distance]
+{   
+    //variables
+    Color color;    // The cell's color
+    int rotation;   //Orientation of the cell
+    int cellX;  //Cell X position
+    int cellY;  //Cell Y position
+    boolean release = false;    //Not been released/been released
+    boolean shot;   //Has it shot/not been shot
+    int vsd; // [Variable Shot Distance]
     
-    public MassBlob(Color color, int rotation, int cellX, int cellY) {
+    /**
+     * Creates a massblob at the cell's position
+     * 
+     * @param color The Color of the cell
+     * @param rotation Orientation of the cell
+     * @param cellX Cell X position
+     * @param cellY Cell Y position
+     * @param vsd Variable Shot Distance
+     */
+    public MassBlob(Color color, int rotation, int cellX, int cellY, int vsd) {
         this.color = color;
         this.cellX = cellX;
         this.cellY = cellY;
+        this.vsd = vsd;
         
         GreenfootImage mass = new GreenfootImage(25, 25);
         mass.setColor(color);
@@ -35,29 +46,30 @@ public class MassBlob extends ScrollActor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() {
+        //Setting the image for the mass blob
         GreenfootImage mass = new GreenfootImage(25, 25);
         mass.setColor(color);
         mass.fillOval(0, 0, 25, 25);
         setImage(mass);
         
+        //Checking mass blob release status
         if (release == false) {
             move(1);
             release = true;
         }
         
+        //Getting mouse position
         MouseInfo m = Greenfoot.getMouseInfo();
         int distance = (int)Math.pow((Math.pow((cellX - getGlobalX()), 2) + Math.pow((cellY - getGlobalY()), 2)), .5);
-        
-        //Actor cell = getTouching(Cell.class);
-        
         shot = false;
         
+        //Removes mass blob if a cell touches it
         if(shot == true && isTouching(Cell.class) == true){
             System.out.print("YAY");
             getWorld().removeObject(this);
         }
         
-
+        //Slowing down the mass blob as its distance increases
         if (m != null && shot == false) {           
             if (distance <= vsd) {
                 move(25);
@@ -84,6 +96,9 @@ public class MassBlob extends ScrollActor
         }
     }    
     
+    /**
+     * Returns the value for shot, being true or false (shot or not shot)
+     */
     public boolean shotStatus(){
         return shot;
     }
