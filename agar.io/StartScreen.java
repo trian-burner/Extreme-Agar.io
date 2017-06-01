@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.awt.Color;
 
 /**
  * The start up scren for the game. Contains input for name, and how you are playing the game (solo, server, client)
@@ -25,6 +26,7 @@ public class StartScreen extends World
      */
     public StartScreen(String name) {
         super(900, 600, 1);
+        addObject(new FadeIn(Color.white), 450, 300);
         addObject(new nameBox(name), getWidth()/2, 350);
     }
     

@@ -1,22 +1,31 @@
 import greenfoot.*;
 import java.util.ArrayList;
 
-public class Agar  extends ScrollWorld{
+public class Agar  extends ScrollWorld {
+    //Agar Class Variables
+    String nameString;
+    NamePlate np;
+    int multiplayer = 0;
+    boolean dying = false;
+    
+    //Agar World Objects
     Counter theCounter; //mass counter
     ScoreBoard scoreBoard;
+    
     Cell thisCell;
     MultiplayerCell otherCell;
-    String nameString;
-    Name name;
+    
+    
+    //Server and Package Variables
     CellPackage thisCellP;
     CellPackage otherCellP;
-    ServerClient serverClient;
-    Server server;
-    int multiplayer = 0;
+    
     ArrayList<ProteinPackage> p = new ArrayList<ProteinPackage>();
     ArrayList<VirusPackage> v = new ArrayList<VirusPackage>();
     WorldPackage wp;
-    boolean dying = false;
+    
+    ServerClient serverClient;
+    Server server;
     
     public Agar(String nameString, int multiplayer) {
         //Creating a world size of 700x500 cells with 1x1 pixels
@@ -32,8 +41,8 @@ public class Agar  extends ScrollWorld{
         addCameraFollower(thisCell, 0, 0);
         setCameraLocation(startX, startY);
         
-        name = new Name(nameString);
-        addObject(name, getWidth()/2, getHeight()/2-8);
+        np = new NamePlate(nameString);
+        addObject(np, getWidth()/2, getHeight()/2-8);
         
         theCounter = new Counter();
         addObject(theCounter, getWidth()/2, getHeight()/2+8);
@@ -66,6 +75,8 @@ public class Agar  extends ScrollWorld{
 
     public void act() {
         if (multiplayer == 1) {
+            scoreBoard.updateScore(thisCell.name, thisCell.getMass(), otherCell.name, otherCell.getMass());
+            
             if(Greenfoot.isKeyDown("escape") && dying == false) {
                 server.stopIt();
                 thisCell.death();
@@ -102,37 +113,13 @@ public class Agar  extends ScrollWorld{
             }
         }
         else {
+            scoreBoard.updateScore(thisCell.name, thisCell.getMass());
+            
             if(Greenfoot.isKeyDown("escape") && dying == false) {
                 thisCell.death();
                 dying = true;
             }
         }
-        
-        if(multiplayer == 0){
-            scoreBoard.updateScore(thisCell.name, thisCell.getMass());
-        } else if(multiplayer == 1){
-            scoreBoard.updateScore(thisCell.name, thisCell.getMass(), otherCell.name, otherCell.getMass());
-        }
-    }
-    
-    public Counter getCounter() {
-        return theCounter;
-    }
-    
-    public void newName(String name) {
-        addObject(new Name(name), getWidth()/2, getHeight()/2-8);
-    }
-    
-    public ScoreBoard getScoreBoard(){
-        return scoreBoard;
-    }
-    
-    public void spawnPlayer() {
-        addObject(new Cell(nameString),(int)(Math.random() * (getFullWidth() - getWidth()) + (getWidth() / 2)), (int)(Math.random() * (getFullHeight() - getHeight()) + (getHeight() / 2)));
-    }
-    
-    public Cell getPlayerCell() {
-        return thisCell;
     }
     
     public void spawnProteins(int amount) {

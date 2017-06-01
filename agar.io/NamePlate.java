@@ -7,11 +7,11 @@ import java.awt.Color;
  * @author (Brian Turner) 
  * @version (0.0.1)
  */
-public class Name extends Actor
+public class NamePlate extends Actor
 {
     String name;
     
-    public Name(String name) {
+    public NamePlate(String name) {
         setImage(new GreenfootImage(name, 24, Color.black, null));
         this.name = name;
     }

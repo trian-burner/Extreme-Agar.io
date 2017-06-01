@@ -156,7 +156,7 @@ public class miniCell extends ScrollActor {
     }
     
     public void counter() {
-        Counter counter = ((Agar)getWorld()).getCounter();  // get a reference to the counter within the world
+        Counter counter = ((Agar)getWorld()).theCounter;  // get a reference to the counter within the world
         counter.updateCount(mass, speed);
     }
     

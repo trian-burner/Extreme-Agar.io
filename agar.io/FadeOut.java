@@ -1,4 +1,5 @@
 import greenfoot.*;
+import java.awt.Color;
 
 /**
  * Write a description of class Fade here.
@@ -9,11 +10,16 @@ import greenfoot.*;
 public class FadeOut extends Actor
 {
     int transparency = 0;
-    String name;
+    World world;
+    Color color = Color.black;
     
-    public FadeOut(String name) {
-        super();
-        this.name = name;
+    public FadeOut(World world) {
+        this.world = world;
+    }
+    
+    public FadeOut(World world, Color color) {
+        this.world = world;
+        this.color = color;
     }
     
     /**
@@ -22,15 +28,15 @@ public class FadeOut extends Actor
      */
     public void act() 
     {
-        getWorld().setActOrder(Protein.class, DeathTester.class, Virus.class);
+        getWorld().setActOrder(Protein.class, Virus.class);
         GreenfootImage fade = new GreenfootImage(900, 600);
+        fade.setColor(color);
         fade.fill();
         fade.setTransparency(transparency);
         setImage(fade);
         transparency+=24;
         if (transparency > 255) {
-            World gameOver = new GameOver(name);
-            Greenfoot.setWorld(gameOver);
+            Greenfoot.setWorld(world);
         }
     }
 }

@@ -93,12 +93,6 @@ public class Cell extends ScrollActor {
             divide();
         }
         
-        //Death tester
-        if (spawn == false) {
-            getWorld().addObject(new DeathTester(), getGlobalX(), getGlobalY() + 200);
-            spawn = true;
-        }
-        
         //Debug Testing
         if(Greenfoot.isKeyDown("enter")) {
             addMass(1);
@@ -176,7 +170,7 @@ public class Cell extends ScrollActor {
      * Updates the counter with the current mass
      */
     public void counter() {
-        Counter counter = ((Agar)getWorld()).getCounter();  // get a reference to the counter within the world
+        Counter counter = ((Agar)getWorld()).theCounter;  // get a reference to the counter within the world
         counter.updateCount(mass, speed);
         //ScoreBoard scoreboard = ((Agar)getWorld()).getScoreBoard();
         //scoreboard.updateScore(mass);
@@ -186,7 +180,7 @@ public class Cell extends ScrollActor {
      * "Kills" the cell, ends the game, and shows the endGame screen
      */
     public void death() {
-        getWorld().addObject(new FadeOut(name), 450, 300);
+        getWorld().addObject(new FadeOut(new GameOver(name)), 450, 300);
         getWorld().removeObject(this);
     }
     

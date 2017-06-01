@@ -30,9 +30,7 @@ public class nameBox extends Actor {
  
     public void act() {
         String key = Greenfoot.getKey();
-        if (text.equals("                   Enter a name")) {
-            text = "";
-        }
+        if (text.equals("                   Enter a name")) text = "";
         if (key == null) return;
         if ("enter".equals(key) && text.length() > 0) {
             int multiplayer = ((StartScreen)getWorld()).screenNum;
@@ -40,13 +38,9 @@ public class nameBox extends Actor {
         }
         if ("backspace".equals(key) && text.equals(name)) text = "";
         if ("backspace".equals(key) && text.length() > 0 && !text.equals("                   Enter a name")) text = text.substring(0, text.length() - 1);
-        if ("escape".equals(key)) text = "";
         if ("space".equals(key)) key = " ";
         if (key.length() == 1 && text.length() < MAX_INPUT_LENGTH) text += key;
+        if (text.length() == 0) text = "                   Enter a name";
         updateImage();
-        if (text.length() == 0) {
-            text = "                   Enter a name";
-            updateImage();
-        }
     }
 }

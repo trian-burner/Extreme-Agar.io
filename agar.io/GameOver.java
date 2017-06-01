@@ -1,10 +1,10 @@
 import greenfoot.*;
+import java.awt.Color;
 
 /**
- * Write a description of class GameOver here.
+ * The screen you see when you die or exit the game.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Wayde Gilliam, Brian Turner, Cecilia Martin, Ethan Harris 
  */
 public class GameOver extends World {
     String name;
@@ -30,10 +30,8 @@ public class GameOver extends World {
             inRange = ((m.getX() < 520) && (m.getX() > 380)) && ((m.getY() < 510) && (m.getY() > 470));
         }
         
-        
         if (Greenfoot.mouseClicked(this) && inRange == true) {
-            World newWorld = new StartScreen(name);
-            Greenfoot.setWorld(newWorld);
+            addObject(new FadeOut(new StartScreen(name), Color.white), 450, 300);
         }
     }
 }

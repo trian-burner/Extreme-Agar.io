@@ -1,4 +1,5 @@
 import greenfoot.*;
+import java.awt.Color;
 
 /**
  * Write a description of class Fade here.
@@ -9,6 +10,25 @@ import greenfoot.*;
 public class FadeIn extends Actor
 {
     int transparency = 255;
+    Color color = Color.black;
+    
+    public FadeIn() {
+        super();
+        GreenfootImage fade = new GreenfootImage(900, 600);
+        fade.fill();
+        setImage(fade);
+    }
+    
+    public FadeIn(Color color) {
+        super();
+        
+        this.color = color;
+        
+        GreenfootImage fade = new GreenfootImage(900, 600);
+        fade.setColor(color);
+        fade.fill();
+        setImage(fade);
+    }
     
     /**
      * Act - do whatever the Fade wants to do. This method is called whenever
@@ -16,8 +36,9 @@ public class FadeIn extends Actor
      */
     public void act() 
     {
-        getWorld().setActOrder(Protein.class, DeathTester.class, Virus.class);
+        getWorld().setActOrder(Protein.class, Virus.class);
         GreenfootImage fade = new GreenfootImage(900, 600);
+        fade.setColor(color);
         fade.fill();
         fade.setTransparency(transparency);
         setImage(fade);
