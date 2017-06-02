@@ -14,7 +14,6 @@ public class NamePlate extends Actor
 {
     String name; // the name of the Cell this NamePlate pertains to
     
-<<<<<<< HEAD
     
     /**
      * Creates a new NamePlate with the given name.
