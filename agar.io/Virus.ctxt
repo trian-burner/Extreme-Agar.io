@@ -1,12 +1,17 @@
 #BlueJ class context
 comment0.params=
-comment0.target=Virus()
+comment0.target=void\ act()
+comment0.text=\r\n\ Creates\ an\ image\ with\ an\ area\ corresponding\ with\ the\ size\ and\ mass\ of\ the\ virus.\r\n\ Creates\ event\ triggers\ for\ various\ methods\ utilized\ by\ the\ Virus\ class.\r\n
 comment1.params=
-comment1.target=void\ act()
+comment1.target=void\ addMass()
+comment1.text=\r\n\ Increases\ the\ mass\ and\ size\ of\ the\ virus.\ \r\n
 comment2.params=
-comment2.target=void\ addMass()
+comment2.target=int\ getMass()
+comment2.text=\r\n\ @return\ the\ mass\ of\ the\ Virus;\r\n
 comment3.params=
-comment3.target=int\ getMass()
+comment3.target=void\ split()
+comment3.text=\r\n\ Resets\ the\ mass\ of\ the\ virus\r\n\ Duplicate\ set\ to\ true,\ causing\ the\ virus\ to\ create\ a\ copy\ of\ itself\r\n\ at\ a\ random\ coordinate\ within\ 100\ pixels\ of\ the\ parent\ cell.\ \r\n
 comment4.params=
-comment4.target=void\ split()
+comment4.target=void\ addedToWorld()
+comment4.text=\r\n\ If\ the\ newly\ created\ virus\ is\ touching\ another\ immediately\ after\ spawning,\r\n\ it\ will\ move\ 50\ pixels\ in\ the\ direction\ it\ is\ facing.\r\n
 numComments=5
