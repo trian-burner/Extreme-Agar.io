@@ -70,13 +70,11 @@ public class Agar  extends ScrollWorld {
         }
         
         scoreBoard = new ScoreBoard();
-        addObject(scoreBoard, 70, 25);
+        addObject(scoreBoard, 80, 40);
     }
 
     public void act() {
         if (multiplayer == 1) {
-            scoreBoard.updateScore(thisCell.name, thisCell.getMass(), otherCell.name, otherCell.getMass());
-            
             if(Greenfoot.isKeyDown("escape") && dying == false) {
                 server.stopIt();
                 thisCell.death();
@@ -90,6 +88,8 @@ public class Agar  extends ScrollWorld {
                 otherCellP = server.update(thisCellP);
                 otherCell.update(otherCellP);
             }
+            
+            //scoreBoard.updateScore(thisCell.name, thisCell.mass, otherCell.name, otherCell.mass);
         }
         else if (multiplayer == 2) {
             if (thisCell != null) {
@@ -111,15 +111,23 @@ public class Agar  extends ScrollWorld {
                 serverClient.stopIt();
                 thisCell.death();
             }
+            
+            //scoreBoard.updateScore(thisCell.name, thisCell.mass, otherCell.name, otherCell.mass);
         }
         else {
-            scoreBoard.updateScore(thisCell.name, thisCell.getMass());
+            //scoreBoard.updateScore(thisCell.name, thisCell.getMass());
             
             if(Greenfoot.isKeyDown("escape") && dying == false) {
                 thisCell.death();
                 dying = true;
             }
         }
+        
+        if(multiplayer == 0){
+             scoreBoard.updateScore(thisCell.name, thisCell.getMass());
+         } else {
+             scoreBoard.updateScore(thisCell.name, thisCell.getMass(), otherCell.name, otherCell.getMass());
+         }
     }
     
     public void spawnProteins(int amount) {

@@ -25,10 +25,13 @@ public class ScoreBoard extends Actor {
      * @param otherMass Mass of other Cell
      */
     public void updateScore(String thisName, int thisMass, String otherName, int otherMass) {
-        setImage(new GreenfootImage("Scores:\n" + thisMass + "\n" + otherName + "--" + otherMass, 28, Color.BLACK, null));
+        setImage(new GreenfootImage("Scores:\n" + thisName + "--" + thisMass + "\n" + otherName + "--" + otherMass, 28, Color.BLACK, null));
     }
     
+<<<<<<< HEAD
+=======
     //This updateScore method is used for when they're is only one cell
+>>>>>>> 2fb4a8964599b4263ab0c4a65aaf64bd7b825fb9
     public void updateScore(String thisName, int thisMass) {
         setImage(new GreenfootImage("Scores:\n" + thisName + " -- " + thisMass, 28, Color.BLACK, null));
     }
