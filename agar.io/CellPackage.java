@@ -25,7 +25,6 @@ public class CellPackage implements java.io.Serializable {
     }
     
     public void update(Cell cell) {
-        if()
         this.name = name;
         this.size = cell.size;
         this.mass = cell.mass;
