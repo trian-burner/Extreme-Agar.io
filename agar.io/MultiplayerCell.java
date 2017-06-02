@@ -57,6 +57,16 @@ public class MultiplayerCell extends ScrollActor {
         //((Agar)getWorld()).spawnProteins(1);
     }
     
+    /**
+     *Consumes a cell with a mass smaller than its own. 
+     */
+    public void cellDevourer(){
+        Cell pcell = (Cell)getOneIntersectingObject(Cell.class);
+       if(getMass() < pcell.getMass()){
+            death();
+        }
+    }
+    
     public void hitVirus() {
         removeTouching(Virus.class);
     }
@@ -83,10 +93,10 @@ public class MultiplayerCell extends ScrollActor {
     //         Counter counter = ((Agar)getWorld()).getCounter();  // get a reference to the counter within the world
     //         counter.updateCount(mass, speed);
     //     }
-    //     public void death() {
-    //         getWorld().addObject(new FadeOut(name), 450, 300);
-    //         getWorld().removeObject(this);
-    //     }
+    public void death() {
+        getWorld().addObject(new FadeOut((Agar)getWorld()), 450, 300);
+        getWorld().removeObject(this);
+    }
     //     public void ejectMass() {
     //         if (mass > 30) {
     //             if (keyCounter > 5) {
