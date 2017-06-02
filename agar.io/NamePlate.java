@@ -2,20 +2,27 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
 
 /**
- * Write a description of class Name here.
+ * Displays cell name on the cell
  * 
- * @author (Brian Turner) 
- * @version (0.0.1)
+ * @author Wayde Gilliam, Brian Turner, Cecilia Martin, Ethan Harris
  */
 public class NamePlate extends Actor
 {
     String name;
     
+    /**
+     * Constructor for NamePlate
+     * 
+     * @param name Cell name
+     */
     public NamePlate(String name) {
         setImage(new GreenfootImage(name, 24, Color.black, null));
         this.name = name;
     }
     
+    /**
+     * Actor method for the NamePlate class
+     */
     public void act() {
         setImage(new GreenfootImage(name, 24, Color.black, null));
     }

@@ -67,36 +67,36 @@ public class MultiplayerCell extends ScrollActor {
         }
     }
     
-//     public void divide() {
-//         if (mass/2 > 20) {
-//             if (keyCounter > 10) {
-//                 ((Agar)getWorld()).addObject(new Cell(cell.getColor(), getRotation(), size/2, mass/2), getGlobalX(), getGlobalY());
-//                 removeMass(mass/2);
-//                 keyCounter = 0;
-//             }
-//             else {
-//                 keyCounter++;
-//             }
-//         }
-//     }
-//     public void counter() {
-//         Counter counter = ((Agar)getWorld()).getCounter();  // get a reference to the counter within the world
-//         counter.updateCount(mass, speed);
-//     }
-//     public void death() {
-//         getWorld().addObject(new FadeOut(name), 450, 300);
-//         getWorld().removeObject(this);
-//     }
-//     public void ejectMass() {
-//         if (mass > 30) {
-//             if (keyCounter > 5) {
-//                 ((Agar)getWorld()).addObject(new MassBlob(cell.getColor(), getRotation(), getGlobalX(), getGlobalY()), getGlobalX(), getGlobalY());
-//                 removeMass(10);
-//                 keyCounter = 0;
-//             }
-//             else {
-//                 keyCounter++;
-//             }
-//         }
-//     }
+    //     public void divide() {
+    //         if (mass/2 > 20) {
+    //             if (keyCounter > 10) {
+    //                 ((Agar)getWorld()).addObject(new Cell(cell.getColor(), getRotation(), size/2, mass/2), getGlobalX(), getGlobalY());
+    //                 removeMass(mass/2);
+    //                 keyCounter = 0;
+    //             }
+    //             else {
+    //                 keyCounter++;
+    //             }
+    //         }
+    //     }
+    //     public void counter() {
+    //         Counter counter = ((Agar)getWorld()).getCounter();  // get a reference to the counter within the world
+    //         counter.updateCount(mass, speed);
+    //     }
+    //     public void death() {
+    //         getWorld().addObject(new FadeOut(name), 450, 300);
+    //         getWorld().removeObject(this);
+    //     }
+    //     public void ejectMass() {
+    //         if (mass > 30) {
+    //             if (keyCounter > 5) {
+    //                 ((Agar)getWorld()).addObject(new MassBlob(cell.getColor(), getRotation(), getGlobalX(), getGlobalY()), getGlobalX(), getGlobalY());
+    //                 removeMass(10);
+    //                 keyCounter = 0;
+    //             }
+    //             else {
+    //                 keyCounter++;
+    //             }
+    //         }
+    //     }
 }

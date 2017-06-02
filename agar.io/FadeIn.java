@@ -2,16 +2,19 @@ import greenfoot.*;
 import java.awt.Color;
 
 /**
- * Write a description of class Fade here.
+ * Fades into the game from the start screen
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Wayde Gilliam, Brian Turner, Cecilia Martin, Ethan Harris
  */
 public class FadeIn extends Actor
 {
+    //Variables
     int transparency = 255;
     Color color = Color.black;
     
+    /**
+     * Default Constructor
+     */
     public FadeIn() {
         super();
         GreenfootImage fade = new GreenfootImage(900, 600);
@@ -19,6 +22,11 @@ public class FadeIn extends Actor
         setImage(fade);
     }
     
+    /**
+     * Sets the color of the fade in
+     * 
+     * @param color Cell Color
+     */
     public FadeIn(Color color) {
         super();
         
