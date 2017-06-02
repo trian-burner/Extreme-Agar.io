@@ -175,21 +175,21 @@ public class Cell extends ScrollActor {
             split = false;
              if(mass/6 >= 20){
                 removeMass(getMass()/6);
-                for(int i = 0; i < 6; i++){
+                /*for(int i = 0; i < 6; i++){
                     ((Agar)getWorld()).addObject(new miniCell(), getGlobalX(), getGlobalY());
-                }
+                }*/
             }else{
                 mass = 20;
                 size = 30;
                 speed = 5;
-                for(int i = 0; i < 5; i++){
+                /*for(int i = 0; i < 5; i++){
                     ((Agar)getWorld()).addObject(new miniCell(), getGlobalX(), getGlobalY());
-                }
+                }*/
             }
         }else{
             if(mass/2 >= 20){
                 removeMass(getMass()/2);
-                ((Agar)getWorld()).addObject(new miniCell(), getGlobalX(), getGlobalY());
+                //((Agar)getWorld()).addObject(new miniCell(), getGlobalX(), getGlobalY());
             }
         }
     }

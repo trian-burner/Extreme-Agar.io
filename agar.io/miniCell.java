@@ -7,8 +7,9 @@ import java.awt.Color;
  * @author Wayde Gilliam, Brian Turner, Cecilia Martin, Ethan Hendricks
  */
 public class miniCell extends ScrollActor {
+    Cell body = (Cell)getOneIntersectingObject(Cell.class);
     int size = 30;
-    int speed = 7;
+    int speed = 5;
     int proteinMass = 10;
     int mass = 20;
     int virus = -60;
@@ -26,47 +27,18 @@ public class miniCell extends ScrollActor {
     }
     
     public void act() {
-        MouseInfo m = Greenfoot.getMouseInfo();
+        
         
         GreenfootImage cell = new GreenfootImage(size, size);
         cell.setColor(Color.BLUE);
         cell.fillOval(0, 0, size, size);
         setImage(cell);
         
-        if (m != null) {
-            int mouseDistance = (int)Math.pow((Math.pow((m.getX() - ((Agar)getWorld()).getWidth()/2), 2) + Math.pow((m.getY() - ((Agar)getWorld()).getHeight()/2), 2)), .5);
-           
-            if (mouseDistance <= 20) {
-                speed = 0;
-            }
-            else if ((mouseDistance <= 20 + 15) && (mouseDistance > 20)) {
-                speed = 1;
-            }
-            else if ((mouseDistance <= 20 + 30) && (mouseDistance > 20 + 15)) {
-                if (maxSpeed >= 2) {
-                   speed = 2; 
-                }
-            }
-            else if ((mouseDistance <= 20 + 45) && (mouseDistance > 20 + 30)) {
-                if (maxSpeed >= 2) {
-                   speed = 3; 
-                }
-            }
-            else if ((mouseDistance <= 20 + 60) && (mouseDistance > 20 + 45)) {
-                if (maxSpeed >= 2) {
-                   speed = 4; 
-                }
-            }
-            else {
-                speed = maxSpeed;
-            }
+        if(body != null){
+           turnTowards(body.getGlobalX(), body.getGlobalY());
+           move(1);
         }
         
-        if (m != null) {
-            turnTowards(m.getX(), m.getY());
-            getWorld().setCameraDirection(getRotation());
-            getWorld().moveCamera(speed);
-        }
         
         if (isTouching(Protein.class)) {
             removeTouching(Protein.class);

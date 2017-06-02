@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.*;
+import java.util.*;
 /**
  * The Virus class is the smallest cell's savior, and the largest cell's excecutioner.  
  * It can hide small cells underneath itself, providing a hiding place that can be used as a getaway, or as a trap. 
@@ -17,7 +18,6 @@ public class Virus extends ScrollActor{//start Virus.class;
     private GreenfootImage virus;
     boolean duplicate;
     boolean spread = true;
-    
     /**
      * Creates an image with an area corresponding with the size and mass of the virus.
      * Creates event triggers for various methods utilized by the Virus class.
@@ -32,6 +32,8 @@ public class Virus extends ScrollActor{//start Virus.class;
         }//end if.statement;
         
         if (isTouching(MassBlob.class)) {//start if.statement;
+            MassBlob blob = (MassBlob)getOneIntersectingObject(MassBlob.class);
+            turnTowards(blob.getGlobalX() * -1, blob.getGlobalY() * -1);
             removeTouching(MassBlob.class);
             addMass();
         }//end if.statement;
@@ -78,8 +80,10 @@ public class Virus extends ScrollActor{//start Virus.class;
      * it will move 50 pixels in the direction it is facing.
      */
     public void addedToWorld(){//start addedToWorld().method;
-        if(isTouching(Virus.class) == true){//start if.statement;
-            spread = false;
+        spread = false;
+        if(isTouching(Virus.class) == true){//start if.statement;   
+            Virus body = (Virus)getOneIntersectingObject(Virus.class);
+            setRotation(body.getRotation());
             move(50);    
         }//end if.statement;
     }//end addedToWorld().method;
