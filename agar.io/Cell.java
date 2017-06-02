@@ -20,6 +20,7 @@ public class Cell extends ScrollActor {
     Color color;
     GreenfootImage cell = new GreenfootImage(size, size);
     String name;
+    boolean split;
     
     /**
      * Creates a new Cell with a random color
@@ -98,6 +99,9 @@ public class Cell extends ScrollActor {
             addMass(1);
         }
         
+        if(isTouching(MultiplayerCell.class)){
+            cellDevourer();
+        }
         
     }
     
@@ -109,6 +113,18 @@ public class Cell extends ScrollActor {
         cell.setColor(color);
         cell.fillOval(0, 0, size, size);
         setImage(cell);
+    }
+    
+    /**
+     *Consumes a cell with a mass smaller than its own. 
+     */
+    public void cellDevourer(){
+        MultiplayerCell mcell = (MultiplayerCell)getOneIntersectingObject(MultiplayerCell.class);
+        if(getMass() > mcell.getMass()){
+            addMass(mcell.getMass());
+        }else if(getMass() < mcell.getMass()){
+            death();
+        }
     }
     
     /**
@@ -153,15 +169,27 @@ public class Cell extends ScrollActor {
     /**
      * Divides the cell into two Cells of half mass and size
      */
-    public void divide() {
-        if (mass/2 > 20) {
-            if (keyCounter > 10) {
-                ((Agar)getWorld()).addObject(new Cell(cell.getColor(), getRotation(), size/2, mass/2), getGlobalX(), getGlobalY());
-                removeMass(mass/2);
-                keyCounter = 0;
+     //Cell Divison
+     public void divide() {
+        if(split == true){
+            split = false;
+             if(mass/6 >= 20){
+                removeMass(getMass()/6);
+                for(int i = 0; i < 6; i++){
+                    ((Agar)getWorld()).addObject(new miniCell(), getGlobalX(), getGlobalY());
+                }
+            }else{
+                mass = 20;
+                size = 30;
+                speed = 5;
+                for(int i = 0; i < 5; i++){
+                    ((Agar)getWorld()).addObject(new miniCell(), getGlobalX(), getGlobalY());
+                }
             }
-            else {
-                keyCounter++;
+        }else{
+            if(mass/2 >= 20){
+                removeMass(getMass()/2);
+                ((Agar)getWorld()).addObject(new miniCell(), getGlobalX(), getGlobalY());
             }
         }
     }
@@ -256,9 +284,10 @@ public class Cell extends ScrollActor {
      */
     public void hitVirus() {
         removeTouching(Virus.class);
-        removeMass(40);
+        split = true;
+        divide();
         }
-    
+           
     /**
      * Ejects a MassBlob from the Cell at it's current rotation, and remove mass
      */

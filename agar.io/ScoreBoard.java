@@ -3,24 +3,35 @@ import java.util.*;
 import java.awt.Color;
 
 /**
- * Write a description of class ScoreBoard here.
+ * Creates images for a score board
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Wayde Gilliam, Brian Turner, Cecilia Martin, Ethan Harris
  */
 
 public class ScoreBoard extends Actor {
+    /**
+     * Scoreboard Zero Argument Constructor
+     */
     public ScoreBoard() {
         setImage(new GreenfootImage("Scores: 20", 28, Color.BLACK, null));
     }
     
     /**
      * Increase the total amount displayed on the counter, by a given amount.
+     * 
+     * @param thisName Cell Name
+     * @param thisMass Cell Mass
+     * @param otherName Name of other Cell
+     * @param otherMass Mass of other Cell
      */
     public void updateScore(String thisName, int thisMass, String otherName, int otherMass) {
         setImage(new GreenfootImage("Scores:\n" + thisName + "--" + thisMass + "\n" + otherName + "--" + otherMass, 28, Color.BLACK, null));
     }
     
+<<<<<<< HEAD
+=======
+    //This updateScore method is used for when they're is only one cell
+>>>>>>> 2fb4a8964599b4263ab0c4a65aaf64bd7b825fb9
     public void updateScore(String thisName, int thisMass) {
         setImage(new GreenfootImage("Scores:\n" + thisName + " -- " + thisMass, 28, Color.BLACK, null));
     }
