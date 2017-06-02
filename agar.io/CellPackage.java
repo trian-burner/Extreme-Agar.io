@@ -14,7 +14,7 @@ public class CellPackage implements java.io.Serializable {
     public CellPackage() {}
     
     public CellPackage(Cell cell) {
-        this.name = name;
+        this.name = cell.name;
         this.size = cell.size;
         this.mass = cell.mass;
         this.x = cell.getGlobalX();

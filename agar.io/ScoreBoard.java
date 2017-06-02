@@ -18,8 +18,9 @@ public class ScoreBoard extends Actor {
      * Increase the total amount displayed on the counter, by a given amount.
      */
     public void updateScore(String thisName, int thisMass, String otherName, int otherMass) {
-        setImage(new GreenfootImage("Scores:\n" + thisMass + "\n" + otherName + "--" + otherMass, 28, Color.BLACK, null));
+        setImage(new GreenfootImage("Scores:\n" + thisName + "--" + thisMass + "\n" + otherName + "--" + otherMass, 28, Color.BLACK, null));
     }
+    
     public void updateScore(String thisName, int thisMass) {
         setImage(new GreenfootImage("Scores:\n" + thisName + " -- " + thisMass, 28, Color.BLACK, null));
     }
