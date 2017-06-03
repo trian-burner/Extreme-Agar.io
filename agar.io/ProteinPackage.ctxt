@@ -1,4 +1,5 @@
 #BlueJ class context
 comment0.params=x\ y\ c
 comment0.target=ProteinPackage(int,\ int,\ int)
+comment0.text=\r\n\ Creates\ a\ new\ ProteinPackage\ with\ the\ given\ x,\ y,\ and\ color\r\n\ \r\n\ @param\ x\ The\ x\ location\ of\ a\ protein\ in\ the\ Server\ world\r\n\ @param\ y\ The\ y\ location\ of\ a\ protein\ in\ the\ Server\ world\r\n\ @param\ c\ The\ color\ of\ the\ protein\ at\ this\ location\r\n
 numComments=1

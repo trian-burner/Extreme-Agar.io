@@ -15,7 +15,6 @@ public class Agar  extends ScrollWorld {
     Cell thisCell;
     MultiplayerCell otherCell;
     
-    
     //Server and Package Variables
     CellPackage thisCellP;
     CellPackage otherCellP;
@@ -96,27 +95,23 @@ public class Agar  extends ScrollWorld {
                 thisCellP.update(thisCell);
             }
             
-            if (serverClient.update(thisCellP) == null) {
-                removeObject(otherCell);
-                otherCell = null;
-                serverClient.stopIt();
-            }
-            
             if (otherCell != null) {
                 otherCellP = serverClient.update(thisCellP);
                 otherCell.update(otherCellP);
+            }
+            
+            if (otherCellP == null) {
+                removeObject(otherCell);
+                otherCell = null;
+                serverClient.stopIt();
             }
             
             if(Greenfoot.isKeyDown("escape")) {
                 serverClient.stopIt();
                 thisCell.death();
             }
-            
-            //scoreBoard.updateScore(thisCell.name, thisCell.mass, otherCell.name, otherCell.mass);
         }
         else {
-            //scoreBoard.updateScore(thisCell.name, thisCell.getMass());
-            
             if(Greenfoot.isKeyDown("escape") && dying == false) {
                 thisCell.death();
                 dying = true;

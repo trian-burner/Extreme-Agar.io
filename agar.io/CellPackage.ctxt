@@ -1,10 +1,11 @@
 #BlueJ class context
 comment0.params=
 comment0.target=CellPackage()
+comment0.text=\r\n\ Creates\ a\ new\ empty\ CellPackage\r\n
 comment1.params=cell
 comment1.target=CellPackage(Cell)
+comment1.text=\r\n\ Creates\ a\ new\ CellPackage\ and\ fills\ all\ of\ the\ variables\ with\ the\ given\ Cell's\ values\r\n\ \r\n\ @param\ cell\ The\ cell\ that\ the\ package\ is\ being\ created\ to\ "hold"\r\n
 comment2.params=cell
 comment2.target=void\ update(Cell)
-comment3.params=
-comment3.target=java.lang.String\ toString()
-numComments=4
+comment2.text=\r\n\ Updates\ the\ package\ with\ the\ current\ act's\ values\r\n\ \r\n\ @param\ cell\ The\ cell\ that\ the\ package\ will\ be\ updated\ with\r\n
+numComments=3

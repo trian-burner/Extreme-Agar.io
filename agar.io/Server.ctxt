@@ -1,8 +1,11 @@
 #BlueJ class context
 comment0.params=wp
 comment0.target=Server(WorldPackage)
+comment0.text=\r\n\ Creates\ a\ new\ Server,\ opens\ a\ socket,\ and\ waits\ for\ a\ connection\r\n\ \r\n\ @param\ wp\ The\ filled\ WorldPackage\ that\ the\ Server\ will\ use\ to\ send\ to\ the\ client\ when\ a\ connection\ has\ been\ established\r\n
 comment1.params=s
 comment1.target=CellPackage\ update(CellPackage)
+comment1.text=\r\n\ Sends\ a\ new\ CellPackage\ and\ recieves\ the\ other\ Player's\ CellPackage\ whenever\ called\r\n\ \r\n\ @param\ s\ The\ CellPackage\ that\ will\ be\ sent\ over\ the\ socket\ to\ the\ Client\r\n\ \r\n\ @return\ Returns\ the\ CellPackage\ the\ server\ has\ recieved\ from\ the\ Client\r\n
 comment2.params=
 comment2.target=void\ stopIt()
+comment2.text=\r\n\ Stops\ all\ server\ processes\ and\ closes\ the\ currently\ open\ sockets\ when\ called\r\n
 numComments=3

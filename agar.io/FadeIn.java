@@ -2,18 +2,17 @@ import greenfoot.*;
 import java.awt.Color;
 
 /**
- * Fades into the game from the start screen
+ * FadeIn fades into the newly created world
  * 
- * @author Wayde Gilliam, Brian Turner, Cecilia Martin, Ethan Harris
+ * @author Wayde Gilliam, Brian Turner, Cecilia Martin, Ethan Harris 
  */
 public class FadeIn extends Actor
 {
-    //Variables
     int transparency = 255;
     Color color = Color.black;
     
     /**
-     * Default Constructor
+     * Creates a new FadeIn
      */
     public FadeIn() {
         super();

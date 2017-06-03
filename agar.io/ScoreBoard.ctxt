@@ -7,4 +7,5 @@ comment1.target=void\ updateScore(java.lang.String,\ int,\ java.lang.String,\ in
 comment1.text=\r\n\ Increase\ the\ total\ amount\ displayed\ on\ the\ counter,\ by\ a\ given\ amount.\r\n\ \r\n\ @param\ thisName\ Cell\ Name\r\n\ @param\ thisMass\ Cell\ Mass\r\n\ @param\ otherName\ Name\ of\ other\ Cell\r\n\ @param\ otherMass\ Mass\ of\ other\ Cell\r\n
 comment2.params=thisName\ thisMass
 comment2.target=void\ updateScore(java.lang.String,\ int)
+comment2.text=\r\n\ For\ when\ there\ is\ only\ one\ cell\r\n\ \r\n\ @param\ thisName\ Cell\ Name\r\n\ @param\ thisMass\ Cell\ Mass\r\n
 numComments=3

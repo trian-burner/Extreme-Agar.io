@@ -17,6 +17,7 @@ public class Counter extends Actor
     
     /**
      * Increase the total amount displayed on the counter, by a given amount
+     * 
      * @param mass The Cell mass
      * @param speed The Cell speed, used for debugging
      */
