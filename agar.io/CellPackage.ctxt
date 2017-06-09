@@ -8,4 +8,6 @@ comment1.text=\r\n\ Creates\ a\ new\ CellPackage\ and\ fills\ all\ of\ the\ vari
 comment2.params=cell
 comment2.target=void\ update(Cell)
 comment2.text=\r\n\ Updates\ the\ package\ with\ the\ current\ act's\ values\r\n\ \r\n\ @param\ cell\ The\ cell\ that\ the\ package\ will\ be\ updated\ with\r\n
-numComments=3
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

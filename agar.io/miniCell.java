@@ -69,18 +69,6 @@ public class miniCell extends ScrollActor {
             divide();
         }
         
-        if(Greenfoot.isKeyDown("w")) {
-            if (mass >= 30) {
-                if (keyCounter > 5) {
-                    ((Agar)getWorld()).addObject(new Mass(cell.getColor(), getRotation(), getGlobalX(), getGlobalY()), getGlobalX(), getGlobalY());
-                    removeMass(10);
-                    keyCounter = 0;
-                }
-                else {
-                    keyCounter++;
-                }
-            }
-        }
     }
     
     /*
