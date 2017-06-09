@@ -247,8 +247,13 @@ dependency71.type=UsesDependency
 dependency72.from=Virus
 dependency72.to=Cell
 dependency72.type=UsesDependency
+<<<<<<< HEAD
 dependency73.from=Cell
 dependency73.to=Pathogen
+=======
+dependency73.from=Virus
+dependency73.to=Cell
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 dependency73.type=UsesDependency
 dependency74.from=Cell
 dependency74.to=miniCell
@@ -305,50 +310,72 @@ mainWindow.height=1026
 mainWindow.width=1692
 mainWindow.x=-8
 mainWindow.y=0
+<<<<<<< HEAD
 package.numDependencies=88
 package.numTargets=24
+=======
+package.numDependencies=72
+package.numTargets=22
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 project.charset=UTF-8
 readme.editor.height=700
 readme.editor.width=900
 readme.editor.x=0
 readme.editor.y=0
 simulation.speed=50
+<<<<<<< HEAD
 target1.editor.height=1017
 target1.editor.width=854
 target1.editor.x=833
 target1.editor.y=0
+=======
+target1.editor.height=1026
+target1.editor.width=1696
+target1.editor.x=-8
+target1.editor.y=-8
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target1.height=50
-target1.name=Server
+target1.name=nameBox
 target1.naviview.expanded=true
 target1.showInterface=false
 target1.type=ClassTarget
 target1.typeParameters=
 target1.width=80
-target1.x=10
-target1.y=490
-target10.editor.height=700
-target10.editor.width=900
-target10.editor.x=73
-target10.editor.y=134
+target1.x=110
+target1.y=250
+target10.editor.height=1026
+target10.editor.width=1696
+target10.editor.x=-8
+target10.editor.y=-8
 target10.height=50
-target10.name=ScrollActor
+target10.name=MultiplayerCell
 target10.naviview.expanded=true
+<<<<<<< HEAD
 target10.showInterface=true
 target10.type=AbstractTarget
 target10.typeParameters=
 target10.width=90
 target10.x=160
 target10.y=70
+=======
+target10.showInterface=false
+target10.type=ClassTarget
+target10.typeParameters=
+target10.width=110
+target10.x=120
+target10.y=430
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target11.editor.height=1026
 target11.editor.width=1696
 target11.editor.x=-8
 target11.editor.y=-8
 target11.height=50
-target11.name=nameBox
+target11.name=StartScreen
 target11.naviview.expanded=true
 target11.showInterface=false
 target11.type=ClassTarget
 target11.typeParameters=
+<<<<<<< HEAD
 target11.width=80
 target11.x=110
 target11.y=250
@@ -356,38 +383,57 @@ target12.editor.height=881
 target12.editor.width=1117
 target12.editor.x=61
 target12.editor.y=23
+=======
+target11.width=90
+target11.x=100
+target11.y=310
+target12.editor.height=1026
+target12.editor.width=1696
+target12.editor.x=-8
+target12.editor.y=-8
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target12.height=50
-target12.name=GameOver
+target12.name=Virus
 target12.naviview.expanded=true
 target12.showInterface=false
 target12.type=ClassTarget
 target12.typeParameters=
 target12.width=80
-target12.x=100
+target12.x=10
 target12.y=190
 target13.editor.height=1026
 target13.editor.width=1696
 target13.editor.x=-8
 target13.editor.y=-8
 target13.height=50
-target13.name=Agar
+target13.name=Counter
 target13.naviview.expanded=true
 target13.showInterface=false
 target13.type=ClassTarget
 target13.typeParameters=
 target13.width=80
+<<<<<<< HEAD
 target13.x=200
 target13.y=10
 target14.editor.height=700
 target14.editor.width=900
 target14.editor.x=403
 target14.editor.y=75
+=======
+target13.x=100
+target13.y=130
+target14.editor.height=1017
+target14.editor.width=854
+target14.editor.x=833
+target14.editor.y=0
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target14.height=50
-target14.name=ServerClient
+target14.name=VirusPackage
 target14.naviview.expanded=true
 target14.showInterface=false
 target14.type=ClassTarget
 target14.typeParameters=
+<<<<<<< HEAD
 target14.width=90
 target14.x=190
 target14.y=370
@@ -395,51 +441,71 @@ target15.editor.height=1026
 target15.editor.width=1696
 target15.editor.x=-8
 target15.editor.y=-8
+=======
+target14.width=100
+target14.x=10
+target14.y=550
+target15.editor.height=874
+target15.editor.width=1035
+target15.editor.x=252
+target15.editor.y=25
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target15.height=50
-target15.name=CellPackage
+target15.name=ScrollWorld
 target15.naviview.expanded=true
 target15.showInterface=false
-target15.type=ClassTarget
+target15.type=AbstractTarget
 target15.typeParameters=
-target15.width=100
-target15.x=10
-target15.y=430
-target16.editor.height=790
-target16.editor.width=1010
-target16.editor.x=83
-target16.editor.y=82
+target15.width=90
+target15.x=100
+target15.y=10
+target16.editor.height=1026
+target16.editor.width=1696
+target16.editor.x=-8
+target16.editor.y=-8
 target16.height=50
-target16.name=Protein
+target16.name=FadeIn
 target16.naviview.expanded=true
 target16.showInterface=false
 target16.type=ClassTarget
 target16.typeParameters=
 target16.width=80
-target16.x=10
-target16.y=130
+target16.x=100
+target16.y=370
 target17.editor.height=1026
 target17.editor.width=1696
 target17.editor.x=-8
 target17.editor.y=-8
 target17.height=50
-target17.name=MultiplayerCell
+target17.name=FadeOut
 target17.naviview.expanded=true
 target17.showInterface=false
 target17.type=ClassTarget
 target17.typeParameters=
+<<<<<<< HEAD
 target17.width=110
 target17.x=120
 target17.y=430
+=======
+target17.width=80
+target17.x=200
+target17.y=250
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target18.editor.height=1026
 target18.editor.width=1696
 target18.editor.x=-8
 target18.editor.y=-8
 target18.height=50
+<<<<<<< HEAD
 target18.name=StartScreen
+=======
+target18.name=MassBlob
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target18.naviview.expanded=true
 target18.showInterface=false
 target18.type=ClassTarget
 target18.typeParameters=
+<<<<<<< HEAD
 target18.width=90
 target18.x=100
 target18.y=310
@@ -449,10 +515,22 @@ target19.editor.x=-8
 target19.editor.y=-8
 target19.height=50
 target19.name=Virus
+=======
+target18.width=80
+target18.x=190
+target18.y=190
+target19.editor.height=1017
+target19.editor.width=854
+target19.editor.x=-7
+target19.editor.y=0
+target19.height=50
+target19.name=ProteinPackage
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target19.naviview.expanded=true
 target19.showInterface=false
 target19.type=ClassTarget
 target19.typeParameters=
+<<<<<<< HEAD
 target19.width=80
 target19.x=10
 target19.y=190
@@ -460,12 +538,22 @@ target2.editor.height=1026
 target2.editor.width=1696
 target2.editor.x=-8
 target2.editor.y=-8
+=======
+target19.width=120
+target19.x=100
+target19.y=490
+target2.editor.height=881
+target2.editor.width=1117
+target2.editor.x=61
+target2.editor.y=23
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target2.height=50
-target2.name=ScoreBoard
+target2.name=GameOver
 target2.naviview.expanded=true
 target2.showInterface=false
 target2.type=ClassTarget
 target2.typeParameters=
+<<<<<<< HEAD
 target2.width=90
 target2.x=190
 target2.y=130
@@ -475,10 +563,22 @@ target20.editor.x=-8
 target20.editor.y=-8
 target20.height=50
 target20.name=miniCell
+=======
+target2.width=80
+target2.x=100
+target2.y=190
+target20.editor.height=1017
+target20.editor.width=854
+target20.editor.x=833
+target20.editor.y=0
+target20.height=50
+target20.name=WorldPackage
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target20.naviview.expanded=true
 target20.showInterface=false
 target20.type=ClassTarget
 target20.typeParameters=
+<<<<<<< HEAD
 target20.width=80
 target20.x=10
 target20.y=250
@@ -488,10 +588,22 @@ target21.editor.x=252
 target21.editor.y=25
 target21.height=50
 target21.name=ScrollWorld
+=======
+target20.width=110
+target20.x=120
+target20.y=550
+target21.editor.height=1026
+target21.editor.width=1696
+target21.editor.x=-8
+target21.editor.y=-8
+target21.height=50
+target21.name=Cell
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target21.naviview.expanded=true
 target21.showInterface=false
 target21.type=AbstractTarget
 target21.typeParameters=
+<<<<<<< HEAD
 target21.width=90
 target21.x=100
 target21.y=10
@@ -514,13 +626,43 @@ target23.editor.x=-8
 target23.editor.y=-8
 target23.height=50
 target23.name=MassBlob
+=======
+target21.width=80
+target21.x=70
+target21.y=70
+target22.editor.height=700
+target22.editor.width=900
+target22.editor.x=73
+target22.editor.y=134
+target22.height=50
+target22.name=ScrollActor
+target22.naviview.expanded=true
+target22.showInterface=true
+target22.type=AbstractTarget
+target22.typeParameters=
+target22.width=90
+target22.x=160
+target22.y=70
+target23.editor.height=700
+target23.editor.width=900
+target23.editor.x=73
+target23.editor.y=134
+target23.height=50
+target23.name=ScrollActor
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target23.naviview.expanded=true
-target23.showInterface=false
-target23.type=ClassTarget
+target23.showInterface=true
+target23.type=AbstractTarget
 target23.typeParameters=
+<<<<<<< HEAD
 target23.width=80
 target23.x=190
 target23.y=190
+=======
+target23.width=90
+target23.x=160
+target23.y=70
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target24.editor.height=1026
 target24.editor.width=1696
 target24.editor.x=-8
@@ -547,55 +689,82 @@ target25.typeParameters=
 target25.width=80
 target25.x=190
 target25.y=190
+<<<<<<< HEAD
 target3.editor.height=1026
 target3.editor.width=1696
 target3.editor.x=-8
 target3.editor.y=-8
+=======
+target3.editor.height=1017
+target3.editor.width=854
+target3.editor.x=833
+target3.editor.y=0
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target3.height=50
-target3.name=NamePlate
+target3.name=Server
 target3.naviview.expanded=true
 target3.showInterface=false
 target3.type=ClassTarget
 target3.typeParameters=
-target3.width=90
+target3.width=80
 target3.x=10
+<<<<<<< HEAD
 target3.y=370
+=======
+target3.y=490
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target4.editor.height=1026
 target4.editor.width=1696
 target4.editor.x=-8
 target4.editor.y=-8
 target4.height=50
-target4.name=Counter
+target4.name=Agar
 target4.naviview.expanded=true
 target4.showInterface=false
 target4.type=ClassTarget
 target4.typeParameters=
 target4.width=80
+<<<<<<< HEAD
 target4.x=100
 target4.y=130
 target5.editor.height=1017
 target5.editor.width=854
 target5.editor.x=833
 target5.editor.y=0
+=======
+target4.x=200
+target4.y=10
+target5.editor.height=700
+target5.editor.width=900
+target5.editor.x=403
+target5.editor.y=75
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target5.height=50
-target5.name=VirusPackage
+target5.name=ServerClient
 target5.naviview.expanded=true
 target5.showInterface=false
 target5.type=ClassTarget
 target5.typeParameters=
+<<<<<<< HEAD
 target5.width=100
 target5.x=10
 target5.y=550
+=======
+target5.width=90
+target5.x=190
+target5.y=370
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target6.editor.height=1026
 target6.editor.width=1696
 target6.editor.x=-8
 target6.editor.y=-8
 target6.height=50
-target6.name=FadeIn
+target6.name=ScoreBoard
 target6.naviview.expanded=true
 target6.showInterface=false
 target6.type=ClassTarget
 target6.typeParameters=
+<<<<<<< HEAD
 target6.width=80
 target6.x=100
 target6.y=370
@@ -603,12 +772,22 @@ target7.editor.height=1017
 target7.editor.width=854
 target7.editor.x=-7
 target7.editor.y=0
+=======
+target6.width=90
+target6.x=190
+target6.y=130
+target7.editor.height=1026
+target7.editor.width=1696
+target7.editor.x=-8
+target7.editor.y=-8
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target7.height=50
-target7.name=ProteinPackage
+target7.name=CellPackage
 target7.naviview.expanded=true
 target7.showInterface=false
 target7.type=ClassTarget
 target7.typeParameters=
+<<<<<<< HEAD
 target7.width=120
 target7.x=100
 target7.y=490
@@ -616,27 +795,36 @@ target8.editor.height=1017
 target8.editor.width=854
 target8.editor.x=833
 target8.editor.y=0
+=======
+target7.width=100
+target7.x=10
+target7.y=430
+target8.editor.height=1026
+target8.editor.width=1696
+target8.editor.x=-8
+target8.editor.y=-8
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 target8.height=50
-target8.name=WorldPackage
+target8.name=NamePlate
 target8.naviview.expanded=true
 target8.showInterface=false
 target8.type=ClassTarget
 target8.typeParameters=
-target8.width=110
-target8.x=120
-target8.y=550
-target9.editor.height=1026
-target9.editor.width=1696
-target9.editor.x=-8
-target9.editor.y=-8
+target8.width=90
+target8.x=10
+target8.y=370
+target9.editor.height=790
+target9.editor.width=1010
+target9.editor.x=83
+target9.editor.y=82
 target9.height=50
-target9.name=Cell
+target9.name=Protein
 target9.naviview.expanded=true
 target9.showInterface=false
 target9.type=ClassTarget
 target9.typeParameters=
 target9.width=80
-target9.x=70
-target9.y=70
-version=2.5.0
+target9.x=10
+target9.y=130
+version=2.7.1
 world.lastInstantiated=StartScreen
