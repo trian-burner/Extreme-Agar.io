@@ -4,5 +4,5 @@ comment0.target=Counter()
 comment0.text=\r\n\ Default\ Constructor\r\n
 comment1.params=mass\ speed
 comment1.target=void\ updateCount(int,\ int)
-comment1.text=\r\n\ Increase\ the\ total\ amount\ displayed\ on\ the\ counter,\ by\ a\ given\ amount\r\n\ @param\ mass\ The\ Cell\ mass\r\n\ @param\ speed\ The\ Cell\ speed,\ used\ for\ debugging\r\n
+comment1.text=\r\n\ Increase\ the\ total\ amount\ displayed\ on\ the\ counter,\ by\ a\ given\ amount\r\n\ \r\n\ @param\ mass\ The\ Cell\ mass\r\n\ @param\ speed\ The\ Cell\ speed,\ used\ for\ debugging\r\n
 numComments=2

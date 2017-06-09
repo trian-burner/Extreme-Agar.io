@@ -1,7 +1,10 @@
 import java.awt.Color;
 
+/**
+ * A package of variables that will be filled with the Player's cell's variable values, position , and rotation. This package will be sent over a secure TCP connection to the respective Server or Client player.
+ */
 public class CellPackage implements java.io.Serializable {
-    private static final long serialVersionUID = 1113799434508676095L;
+    private static final long serialVersionUID = 1L; // a special serial ID used to make sure the correct Class is being used
     String name;
     int size;
     int mass;
@@ -11,8 +14,16 @@ public class CellPackage implements java.io.Serializable {
     int speed;
     Color color = Color.white;
     
+    /**
+     * Creates a new empty CellPackage
+     */
     public CellPackage() {}
     
+    /**
+     * Creates a new CellPackage and fills all of the variables with the given Cell's values
+     * 
+     * @param cell The cell that the package is being created to "hold"
+     */
     public CellPackage(Cell cell) {
         this.name = cell.name;
         this.size = cell.size;
@@ -24,6 +35,11 @@ public class CellPackage implements java.io.Serializable {
         this.color = cell.color;
     }
     
+    /**
+     * Updates the package with the current act's values
+     * 
+     * @param cell The cell that the package will be updated with
+     */
     public void update(Cell cell) {
         this.name = name;
         this.size = cell.size;
@@ -34,8 +50,10 @@ public class CellPackage implements java.io.Serializable {
         this.speed = cell.speed;
         this.color = cell.color;
     }
-    
+<<<<<<< HEAD
     public String toString() {
         return "Name: " + name + "; Size: " + size + "; Mass: " + mass + "; X: " + x + "; Y: " + y + "; R: " + rotation + "; Speed: " + speed;
     }
+=======
+>>>>>>> 3a1c6d9227b4795a2ab86517f768c961c01b1534
 }

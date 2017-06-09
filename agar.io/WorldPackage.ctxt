@@ -1,4 +1,5 @@
 #BlueJ class context
 comment0.params=p\ v
 comment0.target=WorldPackage(java.util.ArrayList,\ java.util.ArrayList)
+comment0.text=\r\n\ Creates\ a\ new\ WorldPackage\ with\ the\ given\ protein\ and\ virus\ package\ lists\r\n\ \r\n\ @param\ p\ The\ ArrayList\ of\ every\ package\ of\ every\ Protein\ in\ the\ world\r\n\ @param\ v\ The\ ArrayList\ of\ every\ package\ of\ every\ Virus\ in\ the\ world\r\n
 numComments=1

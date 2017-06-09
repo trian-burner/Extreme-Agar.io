@@ -1,10 +1,14 @@
 #BlueJ class context
 comment0.params=
 comment0.target=ServerClient()
+comment0.text=\r\n\ Creates\ a\ new\ Client,\ opens\ a\ socket,\ and\ attempts\ a\ connection\ to\ a\ server\r\n
 comment1.params=s
 comment1.target=CellPackage\ update(CellPackage)
+comment1.text=\r\n\ Sends\ a\ new\ CellPackage\ and\ recieves\ the\ other\ Player's\ CellPackage\ whenever\ called\r\n\ \r\n\ @param\ s\ The\ CellPackage\ that\ will\ be\ sent\ over\ the\ socket\ to\ the\ Server\r\n\ \r\n\ @return\ Returns\ the\ CellPackage\ the\ Client\ has\ recieved\ from\ the\ Server\r\n
 comment2.params=
 comment2.target=void\ stopIt()
+comment2.text=\r\n\ Stops\ all\ Client\ processes\ and\ closes\ the\ currently\ open\ sockets\ when\ called\r\n
 comment3.params=
 comment3.target=WorldPackage\ getWorld()
+comment3.text=\r\n\ Used\ by\ Agar\ to\ initially\ recieve\ the\ world\ and\ create\ a\ world\ based\ off\ of\ it\r\n\ \r\n\ @return\ The\ WorldPackage\ recieved\ from\ the\ Server\r\n
 numComments=4

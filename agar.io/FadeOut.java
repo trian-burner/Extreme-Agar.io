@@ -2,10 +2,9 @@ import greenfoot.*;
 import java.awt.Color;
 
 /**
- * Write a description of class Fade here.
+ * FadeOut fades the current world out, then starts the new world with a fade in
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Wayde Gilliam, Brian Turner, Cecilia Martin, Ethan Harris 
  */
 public class FadeOut extends Actor
 {
@@ -13,10 +12,21 @@ public class FadeOut extends Actor
     World world;
     Color color = Color.black;
     
+    /**
+     * Creates a new FadeOut with a given world
+     * 
+     * @param world The world that will be created after the fadeout is done 
+     */
     public FadeOut(World world) {
         this.world = world;
     }
     
+    /**
+     * Creates a new FadeOut with a given world and color of fade
+     * 
+     * @param world The world that will be created after the fadeout is done
+     * @param color The color the fade should be
+     */
     public FadeOut(World world, Color color) {
         this.world = world;
         this.color = color;

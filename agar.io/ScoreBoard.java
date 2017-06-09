@@ -3,7 +3,7 @@ import java.util.*;
 import java.awt.Color;
 
 /**
- * Creates images for a score board
+ * Creates images for the scoreboard
  * 
  * @author Wayde Gilliam, Brian Turner, Cecilia Martin, Ethan Harris
  */
@@ -28,9 +28,14 @@ public class ScoreBoard extends Actor {
         setImage(new GreenfootImage("Scores:\n" + thisName + "--" + thisMass + "\n" + otherName + "--" + otherMass, 28, Color.BLACK, null));
     }
     
-    //This updateScore method is used for when they're is only one cell
-
-    public void updateScore(String thisName, int thisMass) {
+    
+    /**
+     * For when there is only one cell
+     * 
+     * @param thisName Cell Name
+     * @param thisMass Cell Mass
+     */ 
+    public void updateScore(String thisName, int thisMass) { 
         setImage(new GreenfootImage("Scores:\n" + thisName + " -- " + thisMass, 28, Color.BLACK, null));
     }
 }

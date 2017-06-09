@@ -68,11 +68,24 @@ public class Cell extends ScrollActor {
             setDirection(m);
         }
         
+        Pathogen path = (Pathogen)getOneIntersectingObject(Pathogen.class);
+        if(isTouching(Pathogen.class)){
+            if(getMass() > (path.getMass())){
+                addMass(path.getMass());
+                removeTouching(Pathogen.class);
+            }
+        }
         //Protein Collision Detection
         if (isTouching(Protein.class)) { 
             hitProtein();
         }
-        
+        miniCell mini = (miniCell)getOneIntersectingObject(miniCell.class);
+        if(isTouching(miniCell.class)){
+            if(getMass() > (mini.getMass() * 2) || getMass() < mini.getMass()){
+                addMass(mini.getMass());
+                removeTouching(miniCell.class);
+            }
+        }
         //MassBlob Collision Detection
         MassBlob massBlob = (MassBlob)getOneIntersectingObject(MassBlob.class);
         if(massBlob != null){ 
@@ -173,23 +186,23 @@ public class Cell extends ScrollActor {
      public void divide() {
         if(split == true){
             split = false;
-             if(mass/6 >= 20){
-                removeMass(getMass()/6);
-                /*for(int i = 0; i < 6; i++){
-                    ((Agar)getWorld()).addObject(new miniCell(), getGlobalX(), getGlobalY());
-                }*/
+             if(getMass() - (5 * (getMass()/6)) >= 20){
+                for(int i = 0; i < 5; i++){
+                    ((Agar)getWorld()).addObject(new miniCell(mass/6, mass/6 + 10, this.color, this.name), getGlobalX(), getGlobalY());
+                }
+                removeMass((5 * (getMass()/6)));
             }else{
+                for(int i = 0; i < 5; i++){
+                    ((Agar)getWorld()).addObject(new miniCell(20, 30, this.color, this.name), getGlobalX(), getGlobalY());
+                }
                 mass = 20;
                 size = 30;
-                speed = 5;
-                /*for(int i = 0; i < 5; i++){
-                    ((Agar)getWorld()).addObject(new miniCell(), getGlobalX(), getGlobalY());
-                }*/
             }
         }else{
-            if(mass/2 >= 20){
+            if(getMass() - (getMass()/2) >= 20){
+                ((Agar)getWorld()).addObject(new miniCell(getMass()/2, size/2 + 10, this.color, this.name), getGlobalX(), getGlobalY());
+                speed = 3;
                 removeMass(getMass()/2);
-                //((Agar)getWorld()).addObject(new miniCell(), getGlobalX(), getGlobalY());
             }
         }
     }

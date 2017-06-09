@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.params=world
 comment0.target=FadeOut(greenfoot.World)
+comment0.text=\r\n\ Creates\ a\ new\ FadeOut\ with\ a\ given\ world\r\n\ \r\n\ @param\ world\ The\ world\ that\ will\ be\ created\ after\ the\ fadeout\ is\ done\ \r\n
 comment1.params=world\ color
 comment1.target=FadeOut(greenfoot.World,\ java.awt.Color)
+comment1.text=\r\n\ Creates\ a\ new\ FadeOut\ with\ a\ given\ world\ and\ color\ of\ fade\r\n\ \r\n\ @param\ world\ The\ world\ that\ will\ be\ created\ after\ the\ fadeout\ is\ done\r\n\ @param\ color\ The\ color\ the\ fade\ should\ be\r\n
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Fade\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n

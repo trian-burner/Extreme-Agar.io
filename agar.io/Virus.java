@@ -9,9 +9,8 @@ import java.util.*;
  * and will lauch its copy in a random direction.
  */
 public class Virus extends ScrollActor{//start Virus.class;
-    /*
-     * Instantiate/Initialize variables;
-     */
+    //Instantiate/Initialize variables
+
     private int proteinMass = 10;
     private int mass = 80;
     private int size = 80;

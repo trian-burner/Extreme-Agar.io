@@ -15,7 +15,6 @@ public class Agar  extends ScrollWorld {
     Cell thisCell;
     MultiplayerCell otherCell;
     
-    
     //Server and Package Variables
     CellPackage thisCellP;
     CellPackage otherCellP;
@@ -50,6 +49,7 @@ public class Agar  extends ScrollWorld {
         if (multiplayer == 0) {
             spawnProteins(500);
             spawnViruses(50);
+            spawnPathogen(12);
         } else if (multiplayer == 1) {
             spawnProteins(500);
             spawnViruses(50);
@@ -96,27 +96,23 @@ public class Agar  extends ScrollWorld {
                 thisCellP.update(thisCell);
             }
             
-            if (serverClient.update(thisCellP) == null) {
-                removeObject(otherCell);
-                otherCell = null;
-                serverClient.stopIt();
-            }
-            
             if (otherCell != null) {
                 otherCellP = serverClient.update(thisCellP);
                 otherCell.update(otherCellP);
+            }
+            
+            if (otherCellP == null) {
+                removeObject(otherCell);
+                otherCell = null;
+                serverClient.stopIt();
             }
             
             if(Greenfoot.isKeyDown("escape")) {
                 serverClient.stopIt();
                 thisCell.death();
             }
-            
-            //scoreBoard.updateScore(thisCell.name, thisCell.mass, otherCell.name, otherCell.mass);
         }
         else {
-            //scoreBoard.updateScore(thisCell.name, thisCell.getMass());
-            
             if(Greenfoot.isKeyDown("escape") && dying == false) {
                 thisCell.death();
                 dying = true;
@@ -150,6 +146,14 @@ public class Agar  extends ScrollWorld {
             
             VirusPackage vPackage = new VirusPackage(x, y);
             v.add(vPackage);
+        }
+    }
+        
+    public void spawnPathogen(int amount){
+        for(int i = 0; i < amount; i++){
+            int x = (int)(Math.random() * (getFullWidth() - getWidth()) + (getWidth() / 2));
+            int y = (int)(Math.random() * (getFullHeight() - getHeight()) + (getHeight() / 2));
+            addObject(new Pathogen(), x, y);
         }
     }
     

@@ -9,13 +9,13 @@ import java.awt.Color;
  */
 public class MassBlob extends ScrollActor
 {   
-    //variables
-    Color color;    // The cell's color
-    int rotation;   //Orientation of the cell
-    int cellX;  //Cell X position
-    int cellY;  //Cell Y position
-    boolean release = false;    //Not been released/been released
-    boolean shot;   //Has it shot/not been shot
+    // variables
+    Color color;    // the cell's color
+    int rotation;   // orientation of the cell
+    int cellX;  // cell X position
+    int cellY;  // cell Y position
+    boolean release = false;    // not been released/been released
+    boolean shot;   // has it shot/not been shot
     int vsd; // [Variable Shot Distance]
     
     /**
@@ -94,12 +94,5 @@ public class MassBlob extends ScrollActor
                 shot = true;
             }
         }
-    }    
-    
-    /**
-     * Returns the value for shot, being true or false (shot or not shot)
-     */
-    public boolean shotStatus(){
-        return shot;
     }
 }
