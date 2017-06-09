@@ -11,6 +11,7 @@ public class Agar  extends ScrollWorld {
     //Agar World Objects
     Counter theCounter; //mass counter
     ScoreBoard scoreBoard;
+    Brian theBrian;
     
     Cell thisCell;
     MultiplayerCell otherCell;
@@ -47,11 +48,16 @@ public class Agar  extends ScrollWorld {
         theCounter = new Counter();
         addObject(theCounter, getWidth()/2, getHeight()/2+8);
         
+        theBrian = new Brian();
+        addObject(theBrian, getWidth()-150, getHeight()-150);
+        
+  
+        
         if (multiplayer == 0) {
             spawnProteins(500);
             spawnViruses(50);
         } else if (multiplayer == 1) {
-            spawnProteins(500);
+            spawnProteins(500000);
             spawnViruses(50);
             wp = new WorldPackage(p, v);
             thisCellP = new CellPackage(thisCell);
@@ -74,6 +80,12 @@ public class Agar  extends ScrollWorld {
     }
 
     public void act() {
+        //Additional help from brian
+        
+        
+        
+        
+        
         if (multiplayer == 1) {
             scoreBoard.updateScore(thisCell.name, thisCell.getMass(), otherCell.name, otherCell.getMass());
             
