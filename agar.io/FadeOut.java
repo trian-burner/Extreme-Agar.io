@@ -39,7 +39,7 @@ public class FadeOut extends Actor
     public void act() 
     {
         getWorld().setActOrder(Protein.class, Virus.class);
-        GreenfootImage fade = new GreenfootImage(900, 600);
+        GreenfootImage fade = new GreenfootImage(1200, 800);
         fade.setColor(color);
         fade.fill();
         fade.setTransparency(transparency);

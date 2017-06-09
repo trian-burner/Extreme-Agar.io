@@ -16,8 +16,8 @@ public class GameOver extends World {
     public GameOver(String name)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(900, 600, 1);
-        addObject(new FadeIn(), 450, 300);
+        super(1200, 800, 1);
+        addObject(new FadeIn(), 600, 400);
         this.name = name;
     }
     
@@ -27,11 +27,11 @@ public class GameOver extends World {
         boolean inRange = false;
         
         if (m != null) {
-            inRange = ((m.getX() < 520) && (m.getX() > 380)) && ((m.getY() < 510) && (m.getY() > 470));
+            inRange = ((m.getX() < 660) && (m.getX() > 520)) && ((m.getY() < 560) && (m.getY() > 530));
         }
         
         if (Greenfoot.mouseClicked(this) && inRange == true) {
-            addObject(new FadeOut(new StartScreen(name), Color.white), 450, 300);
+            addObject(new FadeOut(new StartScreen(name), Color.white), 600, 400);
         }
     }
 }

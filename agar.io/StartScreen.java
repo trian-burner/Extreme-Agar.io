@@ -15,8 +15,8 @@ public class StartScreen extends World
      * Constructor for objects of class StartScreen.
      */
     public StartScreen() {
-        super(900, 600, 1);
-        addObject(new nameBox(), getWidth()/2, 350);
+        super(1200, 800, 1);
+        addObject(new nameBox(), getWidth()/2, 450);
     }
 
     /**
@@ -25,9 +25,9 @@ public class StartScreen extends World
      * @param name Cell name
      */
     public StartScreen(String name) {
-        super(900, 600, 1);
-        addObject(new FadeIn(Color.white), 450, 300);
-        addObject(new nameBox(name), getWidth()/2, 350);
+        super(1200, 800, 1);
+        addObject(new FadeIn(Color.white), 600, 400);
+        addObject(new nameBox(name), getWidth()/2, 450);
     }
 
     /**
