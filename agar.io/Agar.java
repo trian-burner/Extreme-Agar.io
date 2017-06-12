@@ -28,7 +28,7 @@ public class Agar  extends ScrollWorld {
     
     public Agar(String nameString, int multiplayer) {
         //Creating a world size of 700x500 cells with 1x1 pixels
-        super(900, 600, 1, 4900, 4600);
+        super(1200, 800, 1, 4900, 4600);
         
         this.multiplayer = multiplayer;
         this.nameString = nameString;

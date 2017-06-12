@@ -15,8 +15,8 @@ public class StartScreen extends World
      * Constructor for objects of class StartScreen.
      */
     public StartScreen() {
-        super(900, 600, 1);
-        addObject(new nameBox(), getWidth()/2, 350);
+        super(1200, 800, 1);
+        addObject(new nameBox(), getWidth()/2, 450);
     }
 
     /**
@@ -25,9 +25,9 @@ public class StartScreen extends World
      * @param name Cell name
      */
     public StartScreen(String name) {
-        super(900, 600, 1);
-        addObject(new FadeIn(Color.white), 450, 300);
-        addObject(new nameBox(name), getWidth()/2, 350);
+        super(1200, 800, 1);
+        addObject(new FadeIn(Color.white), 600, 400);
+        addObject(new nameBox(name), getWidth()/2, 450);
     }
 
     /**
@@ -40,7 +40,7 @@ public class StartScreen extends World
 
         //Sets mouse position
         if (m != null) {
-            inRange = ((m.getX() < 640) && (m.getX() > 440)) && ((m.getY() < 268) && (m.getY() > 232));
+            inRange = ((m.getX() < 790) && (m.getX() > 590)) && ((m.getY() < 370) && (m.getY() > 330));
         }
 
         //Changes screens based on mouse clicks and position
