@@ -7,10 +7,10 @@ public class MultiplayerCell extends ScrollActor {
     int size = 1;
     int mass;
     int speed;
-    
+    boolean alive = true;
     Color color;
     GreenfootImage cell = new GreenfootImage(size, size);
- 
+    
     public MultiplayerCell() {
         super();
         
@@ -21,11 +21,16 @@ public class MultiplayerCell extends ScrollActor {
     }
     
     public void update(CellPackage p) {
-        name = p.name;
-        size = p.size;
-        mass = p.mass;
-        color = p.color;
-        setGlobalLocation(p.x, p.y);
+        System.out.print(alive);
+        if(alive == true){
+            name = p.name;
+            size = p.size;
+            mass = p.mass;
+            color = p.color;
+            setGlobalLocation(p.x, p.y);
+        }else{
+            ((Agar)getWorld()).removeObject(this);
+        }
     }
     
     public void act() {        
@@ -63,7 +68,8 @@ public class MultiplayerCell extends ScrollActor {
     public void cellDevourer(){
         Cell pcell = (Cell)getOneIntersectingObject(Cell.class);
        if(getMass() < pcell.getMass()){
-            death();
+           alive = false; 
+           //death();
         }
     }
     
@@ -77,8 +83,9 @@ public class MultiplayerCell extends ScrollActor {
         }
     }
     
-    public void death() {
+    /*public void death() {
         getWorld().addObject(new FadeOut((Agar)getWorld()), 450, 300);
-        getWorld().removeObject(this);
-    }
+        alive = false;
+        //getWorld().removeObject(this);
+    }*/
 }

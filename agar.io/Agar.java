@@ -49,7 +49,7 @@ public class Agar  extends ScrollWorld {
         if (multiplayer == 0) {
             spawnProteins(500);
             spawnViruses(50);
-            spawnPathogen(12);
+            spawnPathogen(6);
         } else if (multiplayer == 1) {
             spawnProteins(500);
             spawnViruses(50);
@@ -99,6 +99,12 @@ public class Agar  extends ScrollWorld {
             if (otherCell != null) {
                 otherCellP = serverClient.update(thisCellP);
                 otherCell.update(otherCellP);
+            }
+            if(thisCellP == null){
+                removeObject(thisCell);
+                thisCell = null;
+                serverClient.stopIt();
+                dying = true;
             }
             
             if (otherCellP == null) {

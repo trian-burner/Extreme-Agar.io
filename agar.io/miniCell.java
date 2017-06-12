@@ -7,10 +7,10 @@ import java.util.*;
  * @author Wayde Gilliam, Brian Turner, Cecilia Martin, Ethan Hendricks
  */
 public class miniCell extends ScrollActor {
-    int size = 30;
+    private int size;
     int speed = 5;
     int proteinMass = 10;
-    int mass = 20;
+    private int mass;
     int virus = -60;
     int t = 0;
     int maxSpeed = speed;
@@ -21,8 +21,8 @@ public class miniCell extends ScrollActor {
     Color color = Color.WHITE;
     public miniCell(int nmass, int nsize, Color ncolor, String nname) {
         super();
-        name = name;
-        mass = nmass;
+        this.size = nsize;
+        this.mass = nmass;
         color = ncolor;
         name = nname;
     }
@@ -42,10 +42,9 @@ public class miniCell extends ScrollActor {
         cell.setColor(color);
         cell.fillOval(0, 0, size, size);
         setImage(cell);
-        followCell(); 
-              
-        
-        
+        //addedToWorld();
+        followCell();
+           
         if (isTouching(Protein.class)) {
             removeTouching(Protein.class);
             addMass(1);
@@ -53,7 +52,7 @@ public class miniCell extends ScrollActor {
         
         miniCell mini = (miniCell)getOneIntersectingObject(miniCell.class);
         if(isTouching(miniCell.class)){
-            if(getMass() > 5 + mini.getMass()){
+            if(getMass() > mini.getMass()){
                 addMass(mini.getMass());
                 removeTouching(miniCell.class);
             }
@@ -71,7 +70,7 @@ public class miniCell extends ScrollActor {
         
     }
     
-    /*
+   
      public void addedToWorld(){
         MouseInfo m = Greenfoot.getMouseInfo();
         boolean shot;
@@ -109,7 +108,7 @@ public class miniCell extends ScrollActor {
             }
         }
        
-    }*/
+    }
     
     public int getMass() {
         return mass;

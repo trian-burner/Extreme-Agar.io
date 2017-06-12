@@ -12,8 +12,8 @@ public class Virus extends ScrollActor{//start Virus.class;
     //Instantiate/Initialize variables
 
     private int proteinMass = 10;
-    private int mass = 80;
-    private int size = 80;
+    private int mass = (int)Math.random() * 50 + 80;
+    private int size = mass;
     private GreenfootImage virus;
     boolean duplicate;
     boolean spread = true;
