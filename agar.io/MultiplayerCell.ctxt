@@ -16,6 +16,4 @@ comment6.params=
 comment6.target=void\ hitVirus()
 comment7.params=massBlob
 comment7.target=void\ hitMassBlob(MassBlob)
-comment8.params=
-comment8.target=void\ death()
-numComments=9
+numComments=8

@@ -7,14 +7,17 @@ public class Pathogen extends ScrollActor
     int size = 30;
     int speed = 7;
     GreenfootImage path;
+    Color[] colorList = {Color.cyan, Color.darkGray, Color.green, Color.lightGray, Color.magenta, Color.orange, Color.pink, Color.red, Color.yellow};
+    Color color;
     public Pathogen(){
         super();
+        color = colorList[(int)(Math.random() * 9)];
     }
     
     public void act() 
     {
         this.path = new GreenfootImage(size, size);
-        path.setColor(Color.MAGENTA);
+        path.setColor(color);
         path.fillOval(0, 0, size, size);
         setImage(path);
         consume();
@@ -79,10 +82,10 @@ public class Pathogen extends ScrollActor
     }
     
     public void infect(){
-        if(mass >= 40){
+        if(mass >= 120){
             ((Agar)getWorld()).addObject(new Pathogen(), getGlobalX(), getGlobalY());
-            mass = 20;
-            size = 30;
+            mass = 60;
+            size = 60;
         }
     }
     
@@ -110,7 +113,7 @@ public class Pathogen extends ScrollActor
             ((Agar)getWorld()).addObject(new Pathogen(), getGlobalX(), getGlobalY());
         }
         mass = 20;
-        size = 30;    
+        size = 20;    
     }
     
     /**
