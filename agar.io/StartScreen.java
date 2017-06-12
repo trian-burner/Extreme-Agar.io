@@ -40,7 +40,7 @@ public class StartScreen extends World
 
         //Sets mouse position
         if (m != null) {
-            inRange = ((m.getX() < 640) && (m.getX() > 440)) && ((m.getY() < 268) && (m.getY() > 232));
+            inRange = ((m.getX() < 790) && (m.getX() > 590)) && ((m.getY() < 370) && (m.getY() > 330));
         }
 
         //Changes screens based on mouse clicks and position
