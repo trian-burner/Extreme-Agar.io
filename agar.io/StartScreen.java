@@ -10,12 +10,17 @@ public class StartScreen extends World
 {
     String[] screens = {"startScreen.png", "startScreenServer.png", "startScreenClient.png"};   //Array for the different screens
     int screenNum = 0;  //Index for the screens array
+    GreenfootSound music = new GreenfootSound("intro.mp3");
 
     /**
      * Constructor for objects of class StartScreen.
      */
     public StartScreen() {
         super(1200, 800, 1);
+        
+        music.setVolume(100);
+        music.playLoop();
+        
         addObject(new nameBox(), getWidth()/2, 450);
     }
 
@@ -26,6 +31,10 @@ public class StartScreen extends World
      */
     public StartScreen(String name) {
         super(1200, 800, 1);
+        
+        music.setVolume(100);
+        music.playLoop();
+        
         addObject(new FadeIn(Color.white), 600, 400);
         addObject(new nameBox(name), getWidth()/2, 450);
     }

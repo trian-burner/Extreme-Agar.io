@@ -7,6 +7,7 @@ public class Agar  extends ScrollWorld {
     NamePlate np;
     int multiplayer = 0;
     boolean dying = false;
+    GreenfootSound music = new GreenfootSound("game.mp3");
     
     //Agar World Objects
     Counter theCounter; //mass counter
@@ -29,6 +30,9 @@ public class Agar  extends ScrollWorld {
     public Agar(String nameString, int multiplayer) {
         //Creating a world size of 700x500 cells with 1x1 pixels
         super(1200, 800, 1, 4900, 4600);
+        
+        music.setVolume(100);
+        music.playLoop();
         
         this.multiplayer = multiplayer;
         this.nameString = nameString;

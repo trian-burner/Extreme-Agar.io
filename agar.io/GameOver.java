@@ -8,6 +8,7 @@ import java.awt.Color;
  */
 public class GameOver extends World {
     String name;
+    GreenfootSound music = new GreenfootSound("die.wav");
     
     /**
      * Constructor for objects of class GameOver.
@@ -17,6 +18,9 @@ public class GameOver extends World {
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1);
+        
+        music.play();
+        
         addObject(new FadeIn(), 600, 400);
         this.name = name;
     }
@@ -31,6 +35,7 @@ public class GameOver extends World {
         }
         
         if (Greenfoot.mouseClicked(this) && inRange == true) {
+            music.stop();
             addObject(new FadeOut(new StartScreen(name), Color.white), 600, 400);
         }
     }

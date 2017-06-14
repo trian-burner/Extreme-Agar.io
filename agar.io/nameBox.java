@@ -34,6 +34,7 @@ public class nameBox extends Actor {
         if (key == null) return;
         if ("enter".equals(key) && text.length() > 0) {
             int multiplayer = ((StartScreen)getWorld()).screenNum;
+            ((StartScreen)getWorld()).music.stop();
             Greenfoot.setWorld(new Agar(text, multiplayer));
         }
         if ("backspace".equals(key) && text.equals(name)) text = "";

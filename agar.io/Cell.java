@@ -226,7 +226,8 @@ public class Cell extends ScrollActor {
      * "Kills" the cell, ends the game, and shows the endGame screen
      */
     public void death() {
-        getWorld().addObject(new FadeOut(new GameOver(name)), 450, 300);
+        ((Agar)getWorld()).music.stop();
+        getWorld().addObject(new FadeOut(new GameOver(name)), 600, 400);
     }
     
     /**
@@ -310,7 +311,7 @@ public class Cell extends ScrollActor {
      */
     public void ejectMass() {
         if (mass > 30) {
-            if (keyCounter > 5) {
+            if (keyCounter > 1) {
                 if(mass <= 250){
                     ((Agar)getWorld()).addObject(new MassBlob(cell.getColor(), getRotation(), getGlobalX(), getGlobalY(), 30), getGlobalX(), getGlobalY());
                 } else if(mass <= 500){
